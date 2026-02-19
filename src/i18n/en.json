@@ -16,6 +16,7 @@
   },
   "history": {
     "title": "History",
+    "all": "All",
     "filterByMonth": "Filter by month",
     "noTransactions": "No transactions for this period",
     "income": "Chore",
