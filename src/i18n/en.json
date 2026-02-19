@@ -53,6 +53,7 @@
     "goalNamePlaceholder": "What are you saving for?",
     "progress": "{{current}} / {{target}}",
     "achieved": "Achieved!",
+    "markAchieved": "Mark as Achieved",
     "save": "Save",
     "cancel": "Cancel",
     "delete": "Delete"
