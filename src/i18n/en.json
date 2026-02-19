@@ -20,7 +20,8 @@
     "filterByMonth": "Filter by month",
     "noTransactions": "No transactions for this period",
     "income": "Chore",
-    "expense": "Expense"
+    "expense": "Expense",
+    "deleteConfirm": "Delete?"
   },
   "addTransaction": {
     "title": "Add Transaction",
