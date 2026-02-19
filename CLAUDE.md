@@ -159,6 +159,7 @@ Bottom nav: `[ Overview ] [ History ] [ (+) FAB ] [ Badges ] [ Goals ]`
 
 **IMPORTANT: When the user asks to deploy or push to Vercel, stop and go through this checklist first.**
 
+- [ ] `memo` ファイルを削除（`.gitignore` に記載済みだが、ローカルに残っていれば削除する）
 - [ ] Supabase Authentication → Providers → Email → **"Confirm email" が ON になっているか確認**
 - [ ] Vercel の環境変数に `VITE_SUPABASE_URL` と `VITE_SUPABASE_ANON_KEY` を設定済みか確認
 - [ ] Supabase SQL（テーブル作成・RLS ポリシー）を本番プロジェクトで実行済みか確認
