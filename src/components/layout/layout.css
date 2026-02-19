@@ -1,0 +1,87 @@
+/* ===== App Layout ===== */
+
+.app-layout {
+  min-height: 100dvh;
+  /* leave room for nav bar + FAB overflow + safe area */
+  padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  background: #f9fafb;
+}
+
+/* ===== Bottom Navigation ===== */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 100;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Nav Items (4 tabs) ===== */
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  color: #9ca3af;
+  flex: 1;
+  padding: 4px 0;
+  transition: color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-item--active {
+  color: #6366f1;
+}
+
+.nav-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.nav-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* ===== Center FAB ===== */
+
+.nav-fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #6366f1;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.45);
+  flex-shrink: 0;
+  /* elevate above the nav bar */
+  position: relative;
+  bottom: 14px;
+  transition: background 0.15s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-fab--active {
+  background: #4f46e5;
+}
+
+.nav-fab:active {
+  transform: scale(0.94);
+}
