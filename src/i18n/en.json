@@ -55,6 +55,24 @@
     "cancel": "Cancel",
     "delete": "Delete"
   },
+  "auth": {
+    "loginTitle": "Welcome to Kidget",
+    "loginSubtitle": "Log in to continue",
+    "signupTitle": "Create Account",
+    "signupSubtitle": "Set up Kidget for your child",
+    "checkEmailTitle": "Check your email",
+    "checkEmailBody": "We sent a confirmation link to {{email}}. Click it to activate your account.",
+    "email": "Email",
+    "password": "Password",
+    "login": "Log In",
+    "signup": "Sign Up",
+    "loggingIn": "Logging in...",
+    "signingUp": "Signing up...",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "signupLink": "Sign up",
+    "loginLink": "Log in"
+  },
   "common": {
     "save": "Save",
     "cancel": "Cancel",
