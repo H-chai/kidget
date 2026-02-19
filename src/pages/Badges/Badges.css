@@ -1,0 +1,116 @@
+/* ===== Page ===== */
+
+.badges-page {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.badges-page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+/* ===== Level card ===== */
+
+.level-card {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 20px;
+  padding: 20px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.level-top-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.level-icon {
+  font-size: 38px;
+  line-height: 1;
+}
+
+.level-label {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* Override ProgressBar track color inside level card */
+.level-card .progress-track {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.level-footer {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===== Section ===== */
+
+.badges-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.badges-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+/* ===== Badge grid ===== */
+
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* ===== Badge card ===== */
+
+.badge-card {
+  background: #ede9fe;
+  border-radius: 16px;
+  padding: 16px 8px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.badge-card--unearned {
+  background: #f3f4f6;
+  filter: grayscale(0.5);
+  opacity: 0.6;
+}
+
+.badge-emoji {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.badge-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #374151;
+  line-height: 1.3;
+}
+
+.badge-desc {
+  font-size: 11px;
+  color: #6b7280;
+  line-height: 1.3;
+}
