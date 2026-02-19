@@ -1,0 +1,163 @@
+/* ===== Page ===== */
+
+.add-page {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== Header ===== */
+
+.add-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4px 0;
+}
+
+.add-cancel {
+  position: absolute;
+  left: 0;
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.add-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+/* ===== Type toggle ===== */
+
+.type-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.type-btn {
+  flex: 1;
+  padding: 16px;
+  border-radius: 14px;
+  border: 2px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 15px;
+  font-weight: 600;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.type-btn--active-income {
+  background: #d1fae5;
+  border-color: #10b981;
+  color: #059669;
+}
+
+.type-btn--active-expense {
+  background: #ffe4e6;
+  border-color: #f43f5e;
+  color: #e11d48;
+}
+
+/* ===== Form ===== */
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.add-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.add-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.add-input {
+  padding: 13px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #111827;
+  background: #f9fafb;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.add-input:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+}
+
+.add-input--amount {
+  font-size: 40px;
+  font-weight: 800;
+  padding: 18px;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+/* ===== Error ===== */
+
+.add-error {
+  font-size: 13px;
+  color: #ef4444;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin: 0;
+}
+
+/* ===== Submit button ===== */
+
+.add-submit {
+  padding: 17px;
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.1s;
+  margin-top: 4px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.add-submit--expense {
+  background: #f43f5e;
+}
+
+.add-submit:hover:not(:disabled) {
+  filter: brightness(0.93);
+}
+
+.add-submit:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.add-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

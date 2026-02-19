@@ -17,7 +17,7 @@ export const LoginPage = () => {
   if (loading) return null;
   if (session) return <Navigate to="/" replace />;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault();
     setError(null);
     setSubmitting(true);

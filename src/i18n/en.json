@@ -32,7 +32,8 @@
     "amount": "Amount",
     "date": "Date",
     "submit": "Save",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "invalidAmount": "Please enter a valid amount (whole number)"
   },
   "badges": {
     "title": "Badges & Level",
