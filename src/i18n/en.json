@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "overview": "Overview",
+    "history": "History",
+    "badges": "Badges",
+    "goals": "Goals"
+  },
+  "overview": {
+    "balance": "Balance",
+    "recentTransactions": "Recent Transactions",
+    "noTransactions": "No transactions yet",
+    "levelProgress": "Level Progress",
+    "choresToLevelUp": "{{count}} more chores to level up",
+    "maxLevel": "Max level reached!",
+    "activeGoal": "Saving for"
+  },
+  "history": {
+    "title": "History",
+    "filterByMonth": "Filter by month",
+    "noTransactions": "No transactions for this period",
+    "income": "Chore",
+    "expense": "Expense"
+  },
+  "addTransaction": {
+    "title": "Add Transaction",
+    "income": "Chore",
+    "expense": "Expense",
+    "description": "Description",
+    "descriptionPlaceholderIncome": "What chore did you do?",
+    "descriptionPlaceholderExpense": "What did you spend on?",
+    "amount": "Amount",
+    "date": "Date",
+    "submit": "Save",
+    "cancel": "Cancel"
+  },
+  "badges": {
+    "title": "Badges & Level",
+    "level": "Level {{level}}",
+    "choresToNextLevel": "{{count}} more chores to level up",
+    "maxLevel": "You reached the highest level!",
+    "earnedSection": "Earned",
+    "unearnedSection": "Keep going!"
+  },
+  "goals": {
+    "title": "Goals",
+    "noGoals": "No goals yet — add one!",
+    "addGoal": "Add Goal",
+    "editGoal": "Edit Goal",
+    "targetAmount": "Target Amount",
+    "goalName": "Goal Name",
+    "goalNamePlaceholder": "What are you saving for?",
+    "progress": "{{current}} / {{target}}",
+    "achieved": "Achieved!",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "loading": "Loading...",
+    "error": "Something went wrong"
+  },
+  "badge": {
+    "first_chore": {
+      "name": "First Chore",
+      "description": "Completed your first chore"
+    },
+    "chore_10": {
+      "name": "Chore Master",
+      "description": "Completed 10 chores"
+    },
+    "chore_streak_7": {
+      "name": "On Fire",
+      "description": "Completed chores 7 days in a row"
+    },
+    "first_goal": {
+      "name": "Goal Setter",
+      "description": "Created your first savings goal"
+    },
+    "goal_achieved": {
+      "name": "Goal Crusher",
+      "description": "Achieved your first savings goal"
+    },
+    "first_expense": {
+      "name": "Spender",
+      "description": "Recorded your first expense"
+    },
+    "saver_month": {
+      "name": "Super Saver",
+      "description": "Spent nothing in a whole month"
+    }
+  }
+}
