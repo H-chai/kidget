@@ -1,4 +1,4 @@
-import { Transaction, Goal } from '../types';
+import type { Transaction, Goal } from '../types';
 
 /** Returns badge IDs that should be earned given the current data */
 export const checkEarnedBadgeIds = (

@@ -16,3 +16,14 @@ export const choresToNextLevel = (choreCount: number): number | null => {
   const next = LEVEL_THRESHOLDS.find(t => t.level === currentLevel + 1);
   return next ? next.minChores - choreCount : null;
 };
+
+/** Returns progress (0–100) within the current level bracket toward the next level */
+export const levelProgressPercent = (choreCount: number): number => {
+  const currentLevel = calculateLevel(choreCount);
+  if (currentLevel >= MAX_LEVEL) return 100;
+  const current = LEVEL_THRESHOLDS.find(t => t.level === currentLevel)!;
+  const next = LEVEL_THRESHOLDS.find(t => t.level === currentLevel + 1)!;
+  return Math.round(
+    ((choreCount - current.minChores) / (next.minChores - current.minChores)) * 100
+  );
+};

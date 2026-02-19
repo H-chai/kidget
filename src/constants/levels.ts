@@ -1,4 +1,4 @@
-import { LevelThreshold } from '../types';
+import type { LevelThreshold } from '../types';
 
 export const LEVEL_THRESHOLDS: LevelThreshold[] = [
   { level: 1, minChores: 0 },

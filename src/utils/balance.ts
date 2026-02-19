@@ -1,4 +1,4 @@
-import { Transaction } from '../types';
+import type { Transaction } from '../types';
 
 /** Calculates current balance from all transactions */
 export const calculateBalance = (transactions: Transaction[]): number =>
