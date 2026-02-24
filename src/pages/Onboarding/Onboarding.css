@@ -7,16 +7,16 @@
   align-items: center;
   justify-content: center;
   padding: 32px 24px;
-  background: #fada66;
+  background: var(--color-accent);
 }
 
 .onboarding-card {
   width: 100%;
   max-width: 400px;
-  background: #fffbf0;
-  border-radius: 24px;
+  background: var(--color-surface-app);
+  border-radius: var(--radius-3xl);
   padding: 32px 24px;
-  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.12);
+  box-shadow: var(--shadow-modal);
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -37,13 +37,14 @@
 .onboarding-title {
   font-size: 22px;
   font-weight: 800;
-  color: #111827;
+  font-family: var(--font-display);
+  color: var(--color-text);
   margin: 0 0 6px;
 }
 
 .onboarding-subtitle {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   margin: 0;
 }
 
@@ -52,7 +53,7 @@
 .onboarding-label {
   font-size: 12px;
   font-weight: 700;
-  color: #6b7280;
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.07em;
   margin: 0 0 10px;
@@ -86,7 +87,7 @@
   border: 3px solid transparent;
   cursor: pointer;
   padding: 0;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform var(--duration), box-shadow var(--duration);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -95,8 +96,8 @@
 }
 
 .mascot-swatch--selected {
-  border-color: #ffffff;
-  box-shadow: 0 0 0 2.5px #6366f1;
+  border-color: var(--color-surface-card);
+  box-shadow: 0 0 0 2.5px var(--color-primary);
   transform: scale(1.12);
 }
 
@@ -105,21 +106,19 @@
 .onboarding-input {
   width: 100%;
   padding: 13px 16px;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 12px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
   font-size: 16px;
-  color: #111827;
-  background: #f9fafb;
+  color: var(--color-text);
+  background: var(--color-surface-page);
   outline: none;
   box-sizing: border-box;
-  transition:
-    border-color 0.15s,
-    background 0.15s;
+  transition: border-color var(--duration), background var(--duration);
 }
 
 .onboarding-input:focus {
-  border-color: #6366f1;
-  background: #ffffff;
+  border-color: var(--color-primary);
+  background: var(--color-surface-card);
 }
 
 /* ===== Submit button ===== */
@@ -127,17 +126,15 @@
 .onboarding-submit {
   width: 100%;
   padding: 15px;
-  background: #6366f1;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface-card);
   border: none;
-  border-radius: 14px;
+  border-radius: var(--radius-lg);
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition:
-    filter 0.15s,
-    transform 0.1s;
+  transition: filter var(--duration), transform var(--duration-fast);
 }
 
 .onboarding-submit:hover:not(:disabled) {
@@ -157,10 +154,10 @@
 
 .onboarding-error {
   font-size: 13px;
-  color: #ef4444;
-  background: #fef2f2;
-  border: 1px solid #fecaca;
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+  border: 1px solid var(--color-danger-border);
   padding: 10px 14px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   margin: 0;
 }

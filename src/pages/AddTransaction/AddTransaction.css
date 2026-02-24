@@ -23,7 +23,7 @@
   background: none;
   border: none;
   font-size: 15px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   cursor: pointer;
   padding: 4px 0;
   -webkit-tap-highlight-color: transparent;
@@ -32,7 +32,8 @@
 .add-title {
   font-size: 18px;
   font-weight: 700;
-  color: #111827;
+  font-family: var(--font-display);
+  color: var(--color-text);
   margin: 0;
 }
 
@@ -46,27 +47,27 @@
 .type-btn {
   flex: 1;
   padding: 16px;
-  border-radius: 14px;
-  border: 2px solid #e5e7eb;
-  background: #f9fafb;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-border);
+  background: var(--color-surface-page);
   font-size: 15px;
   font-weight: 600;
-  color: #9ca3af;
+  color: var(--color-text-subtle);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all var(--duration);
   -webkit-tap-highlight-color: transparent;
 }
 
 .type-btn--active-income {
-  background: #d1fae5;
-  border-color: #10b981;
-  color: #059669;
+  background: var(--color-income-bg);
+  border-color: var(--color-income);
+  color: var(--color-income-dark);
 }
 
 .type-btn--active-expense {
-  background: #ffe4e6;
-  border-color: #f43f5e;
-  color: #e11d48;
+  background: var(--color-expense-bg);
+  border-color: var(--color-expense);
+  color: var(--color-expense-dark);
 }
 
 /* ===== Form ===== */
@@ -86,32 +87,33 @@
 .add-label {
   font-size: 12px;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
 .add-input {
   padding: 13px 16px;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 12px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
   font-size: 16px;
-  color: #111827;
-  background: #f9fafb;
+  color: var(--color-text);
+  background: var(--color-surface-page);
   outline: none;
   width: 100%;
   box-sizing: border-box;
-  transition: border-color 0.15s, background 0.15s;
+  transition: border-color var(--duration), background var(--duration);
 }
 
 .add-input:focus {
-  border-color: #6366f1;
-  background: #ffffff;
+  border-color: var(--color-primary);
+  background: var(--color-surface-card);
 }
 
 .add-input--amount {
   font-size: 40px;
   font-weight: 800;
+  font-family: var(--font-display);
   padding: 18px;
   text-align: center;
   letter-spacing: -1px;
@@ -121,11 +123,11 @@
 
 .add-error {
   font-size: 13px;
-  color: #ef4444;
-  background: #fef2f2;
-  border: 1px solid #fecaca;
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+  border: 1px solid var(--color-danger-border);
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   margin: 0;
 }
 
@@ -133,20 +135,20 @@
 
 .add-submit {
   padding: 17px;
-  background: #10b981;
-  color: #ffffff;
+  background: var(--color-income);
+  color: var(--color-surface-card);
   border: none;
-  border-radius: 14px;
+  border-radius: var(--radius-lg);
   font-size: 17px;
   font-weight: 700;
   cursor: pointer;
-  transition: filter 0.15s, transform 0.1s;
+  transition: filter var(--duration), transform var(--duration-fast);
   margin-top: 4px;
   -webkit-tap-highlight-color: transparent;
 }
 
 .add-submit--expense {
-  background: #f43f5e;
+  background: var(--color-expense);
 }
 
 .add-submit:hover:not(:disabled) {

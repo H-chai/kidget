@@ -18,21 +18,22 @@
 .goals-title {
   font-size: 22px;
   font-weight: 700;
-  color: #111827;
+  font-family: var(--font-display);
+  color: var(--color-text);
   margin: 0;
 }
 
 .goals-add-btn {
-  background: #6366f1;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface-card);
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: filter 0.15s;
+  transition: filter var(--duration);
 }
 
 .goals-add-btn:hover {
@@ -40,16 +41,16 @@
 }
 
 .goals-add-btn--cancel {
-  background: #f3f4f6;
-  color: #6b7280;
+  background: var(--color-surface-hover);
+  color: var(--color-text-muted);
 }
 
 /* ===== Add form ===== */
 
 .goals-form {
-  background: #f9fafb;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 16px;
+  background: var(--color-surface-page);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -65,35 +66,35 @@
 .goals-label {
   font-size: 12px;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
 .goals-input {
   padding: 11px 14px;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 10px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
   font-size: 15px;
-  color: #111827;
-  background: #ffffff;
+  color: var(--color-text);
+  background: var(--color-surface-card);
   outline: none;
   width: 100%;
   box-sizing: border-box;
-  transition: border-color 0.15s;
+  transition: border-color var(--duration);
 }
 
 .goals-input:focus {
-  border-color: #6366f1;
+  border-color: var(--color-primary);
 }
 
 .goals-form-error {
   font-size: 13px;
-  color: #ef4444;
-  background: #fef2f2;
-  border: 1px solid #fecaca;
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+  border: 1px solid var(--color-danger-border);
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   margin: 0;
 }
 
@@ -105,27 +106,27 @@
 
 .goals-form-cancel {
   background: none;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 10px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
   padding: 10px 18px;
   font-size: 14px;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--color-text-muted);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
 
 .goals-form-save {
-  background: #6366f1;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface-card);
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   padding: 10px 18px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: filter 0.15s;
+  transition: filter var(--duration);
 }
 
 .goals-form-save:hover:not(:disabled) {
@@ -141,7 +142,7 @@
 
 .goals-empty {
   text-align: center;
-  color: #9ca3af;
+  color: var(--color-text-subtle);
   font-size: 15px;
   padding: 40px 0;
   margin: 0;
@@ -161,9 +162,9 @@
 /* ===== Goal card ===== */
 
 .goal-card {
-  background: #ffffff;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 16px;
+  background: var(--color-surface-card);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -171,8 +172,8 @@
 }
 
 .goal-card--achieved {
-  background: #f0fdf4;
-  border-color: #a7f3d0;
+  background: var(--color-income-surface);
+  border-color: var(--color-income-border);
 }
 
 .goal-card-header {
@@ -185,25 +186,25 @@
 .goal-name {
   font-size: 16px;
   font-weight: 600;
-  color: #111827;
+  color: var(--color-text);
   flex: 1;
 }
 
 .goal-delete-btn {
   background: none;
   border: none;
-  color: #d1d5db;
+  color: var(--color-border);
   font-size: 16px;
   cursor: pointer;
   padding: 2px 6px;
   line-height: 1;
   flex-shrink: 0;
   -webkit-tap-highlight-color: transparent;
-  transition: color 0.15s;
+  transition: color var(--duration);
 }
 
 .goal-delete-btn:hover {
-  color: #ef4444;
+  color: var(--color-danger);
 }
 
 .goal-progress-label {
@@ -211,32 +212,32 @@
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: #6b7280;
+  color: var(--color-text-muted);
 }
 
 .goal-achieved-badge {
-  background: #d1fae5;
-  color: #059669;
+  background: var(--color-income-bg);
+  color: var(--color-income-dark);
   font-size: 11px;
   font-weight: 700;
   padding: 2px 8px;
-  border-radius: 20px;
+  border-radius: var(--radius-2xl);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .goal-achieve-btn {
-  background: #6366f1;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface-card);
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   padding: 11px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   width: 100%;
   -webkit-tap-highlight-color: transparent;
-  transition: filter 0.15s;
+  transition: filter var(--duration);
 }
 
 .goal-achieve-btn:hover {

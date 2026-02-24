@@ -10,17 +10,18 @@
 .settings-title {
   font-size: 22px;
   font-weight: 700;
-  color: #111827;
+  font-family: var(--font-display);
+  color: var(--color-text);
   margin: 0;
 }
 
 /* ===== Section card ===== */
 
 .settings-section {
-  background: #ffffff;
-  border-radius: 18px;
+  background: var(--color-surface-card);
+  border-radius: var(--radius-2xl);
   padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-card-sm);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -29,7 +30,7 @@
 .settings-section-title {
   font-size: 12px;
   font-weight: 700;
-  color: #9ca3af;
+  color: var(--color-text-subtle);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin: 0;
@@ -46,7 +47,7 @@
 .settings-label {
   font-size: 13px;
   font-weight: 600;
-  color: #374151;
+  color: var(--color-text-secondary);
 }
 
 /* ===== Mascot picker ===== */
@@ -77,7 +78,7 @@
   border: 3px solid transparent;
   cursor: pointer;
   padding: 0;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform var(--duration), box-shadow var(--duration);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -86,8 +87,8 @@
 }
 
 .mascot-swatch--selected {
-  border-color: #ffffff;
-  box-shadow: 0 0 0 2.5px #6366f1;
+  border-color: var(--color-surface-card);
+  box-shadow: 0 0 0 2.5px var(--color-primary);
   transform: scale(1.12);
 }
 
@@ -96,19 +97,19 @@
 .settings-input {
   width: 100%;
   padding: 11px 14px;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 12px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
   font-size: 15px;
-  color: #111827;
-  background: #f9fafb;
+  color: var(--color-text);
+  background: var(--color-surface-page);
   outline: none;
   box-sizing: border-box;
-  transition: border-color 0.15s, background 0.15s;
+  transition: border-color var(--duration), background var(--duration);
 }
 
 .settings-input:focus {
-  border-color: #6366f1;
-  background: #ffffff;
+  border-color: var(--color-primary);
+  background: var(--color-surface-card);
 }
 
 /* ===== Save button ===== */
@@ -116,15 +117,15 @@
 .settings-save-btn {
   width: 100%;
   padding: 13px;
-  background: #6366f1;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface-card);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: filter 0.15s;
+  transition: filter var(--duration);
 }
 
 .settings-save-btn:hover:not(:disabled) {
@@ -142,7 +143,7 @@
   text-align: center;
   font-size: 13px;
   font-weight: 600;
-  color: #10b981;
+  color: var(--color-income);
 }
 
 /* ===== Sign out ===== */
@@ -151,16 +152,16 @@
   width: 100%;
   padding: 13px;
   background: none;
-  border: 1.5px solid #fecaca;
-  border-radius: 12px;
+  border: 1.5px solid var(--color-danger-border);
+  border-radius: var(--radius-lg);
   font-size: 15px;
   font-weight: 700;
-  color: #ef4444;
+  color: var(--color-danger);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: background 0.15s, color 0.15s;
+  transition: background var(--duration), color var(--duration);
 }
 
 .settings-signout-btn:hover {
-  background: #fef2f2;
+  background: var(--color-danger-bg);
 }

@@ -1,27 +1,83 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* ===== Brand ===== */
+  --color-primary: #3C87D5;
+  --color-primary-hover: #2D78C3;
+  --color-primary-light: #93C5FD;
+  --color-primary-subtle: #BFDBFE;
+  --color-primary-bg: #DBEAFE;
+
+  /* ===== Accent (level / progress) ===== */
+  --color-accent: #FADA66;
+  --color-accent-dark: #F0C840;
+
+  /* ===== Mascot Palette ===== */
+  --color-mascot-blue: #3C87D5;
+  --color-mascot-green: #6EE057;
+  --color-mascot-purple: #A057E0;
+  --color-mascot-pink: #EA60CF;
+  --color-mascot-orange: #F18334;
+
+  /* ===== Income ===== */
+  --color-income: #1EB400;
+  --color-income-dark: #178F00;
+  --color-income-bg: #E6FFE3;
+  --color-income-border: #A3E6A0;
+  --color-income-surface: #F0FFF0;
+
+  /* ===== Expense / Danger ===== */
+  --color-expense: #F41D1D;
+  --color-expense-dark: #CC1515;
+  --color-expense-bg: #FFE4E4;
+  --color-danger: #F41D1D;
+  --color-danger-bg: #FFF0F0;
+  --color-danger-border: #FFC9C9;
+
+  /* ===== Text ===== */
+  --color-text: #111111;
+  --color-text-muted: #888888;
+  --color-text-subtle: #AAAAAA;
+
+  /* ===== Surface ===== */
+  --color-surface-app: #FFFBF0;
+  --color-surface-card: #FFFFFF;
+  --color-surface-page: #F9FAFB;
+  --color-surface-hover: #F3F4F6;
+
+  /* ===== Border ===== */
+  --color-border: #E5E7EB;
+  --color-border-light: #F3F4F6;
+
+  /* ===== Border Radius ===== */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  --radius-full: 99px;
+
+  /* ===== Shadows ===== */
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-card-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --shadow-nav: 0 -2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-fab: 0 4px 16px rgba(60, 135, 213, 0.45);
+  --shadow-modal: 0 4px 24px rgba(0, 0, 0, 0.08);
+
+  /* ===== Transitions ===== */
+  --duration: 0.15s;
+  --duration-fast: 0.1s;
+
+  /* ===== Typography ===== */
+  --font-body: 'Nunito', system-ui, sans-serif;
+  --font-display: 'Montserrat', system-ui, sans-serif;
+
+  font-family: var(--font-body);
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  width: 100%;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
@@ -30,39 +86,6 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+a {
+  text-decoration: none;
 }
