@@ -1,5 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { MdHomeFilled, MdEventNote } from 'react-icons/md';
+import { RiMedalFill } from 'react-icons/ri';
+import { LuGoal } from 'react-icons/lu';
 import './layout.css';
 
 const navItemClass = ({ isActive }: { isActive: boolean }) =>
@@ -14,12 +17,12 @@ export const BottomNav = () => {
   return (
     <nav className="bottom-nav">
       <NavLink to="/" end className={navItemClass}>
-        <span className="nav-icon">🏠</span>
+        <MdHomeFilled className="nav-icon" />
         <span className="nav-label">{t('nav.overview')}</span>
       </NavLink>
 
       <NavLink to="/history" className={navItemClass}>
-        <span className="nav-icon">📋</span>
+        <MdEventNote className="nav-icon" />
         <span className="nav-label">{t('nav.history')}</span>
       </NavLink>
 
@@ -28,12 +31,12 @@ export const BottomNav = () => {
       </NavLink>
 
       <NavLink to="/badges" className={navItemClass}>
-        <span className="nav-icon">🏅</span>
+        <RiMedalFill className="nav-icon" />
         <span className="nav-label">{t('nav.badges')}</span>
       </NavLink>
 
       <NavLink to="/goals" className={navItemClass}>
-        <span className="nav-icon">🎯</span>
+        <LuGoal className="nav-icon" />
         <span className="nav-label">{t('nav.goals')}</span>
       </NavLink>
     </nav>
