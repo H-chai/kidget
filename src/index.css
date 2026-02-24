@@ -1,51 +1,51 @@
 :root {
   /* ===== Brand ===== */
-  --color-primary: #3C87D5;
-  --color-primary-hover: #2D78C3;
-  --color-primary-light: #93C5FD;
-  --color-primary-subtle: #BFDBFE;
-  --color-primary-bg: #DBEAFE;
+  --color-primary: #3c87d5;
+  --color-primary-hover: #2d78c3;
+  --color-primary-light: #93c5fd;
+  --color-primary-subtle: #bfdbfe;
+  --color-primary-bg: #dbeafe;
 
   /* ===== Accent (level / progress) ===== */
-  --color-accent: #FADA66;
-  --color-accent-dark: #F0C840;
+  --color-accent: #fada66;
+  --color-accent-dark: #f0c840;
 
   /* ===== Mascot Palette ===== */
-  --color-mascot-blue: #3C87D5;
-  --color-mascot-green: #6EE057;
-  --color-mascot-purple: #A057E0;
-  --color-mascot-pink: #EA60CF;
-  --color-mascot-orange: #F18334;
+  --color-mascot-blue: #3c87d5;
+  --color-mascot-green: #6ee057;
+  --color-mascot-purple: #a057e0;
+  --color-mascot-pink: #ea60cf;
+  --color-mascot-orange: #f18334;
 
   /* ===== Income ===== */
-  --color-income: #1EB400;
-  --color-income-dark: #178F00;
-  --color-income-bg: #E6FFE3;
-  --color-income-border: #A3E6A0;
-  --color-income-surface: #F0FFF0;
+  --color-income: #1eb400;
+  --color-income-dark: #178f00;
+  --color-income-bg: #e6ffe3;
+  --color-income-border: #a3e6a0;
+  --color-income-surface: #f0fff0;
 
   /* ===== Expense / Danger ===== */
-  --color-expense: #F41D1D;
-  --color-expense-dark: #CC1515;
-  --color-expense-bg: #FFE4E4;
-  --color-danger: #F41D1D;
-  --color-danger-bg: #FFF0F0;
-  --color-danger-border: #FFC9C9;
+  --color-expense: #f41d1d;
+  --color-expense-dark: #cc1515;
+  --color-expense-bg: #ffe4e4;
+  --color-danger: #f41d1d;
+  --color-danger-bg: #fff0f0;
+  --color-danger-border: #ffc9c9;
 
   /* ===== Text ===== */
   --color-text: #111111;
   --color-text-muted: #888888;
-  --color-text-subtle: #AAAAAA;
+  --color-text-subtle: #aaaaaa;
 
   /* ===== Surface ===== */
-  --color-surface-app: #FFFBF0;
-  --color-surface-card: #FFFFFF;
-  --color-surface-page: #F9FAFB;
-  --color-surface-hover: #F3F4F6;
+  --color-surface-app: #fffbf0;
+  --color-surface-card: #ffffff;
+  --color-surface-page: #f9fafb;
+  --color-surface-hover: #f3f4f6;
 
   /* ===== Border ===== */
-  --color-border: #E5E7EB;
-  --color-border-light: #F3F4F6;
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
 
   /* ===== Border Radius ===== */
   --radius-sm: 8px;
@@ -68,8 +68,8 @@
   --duration-fast: 0.1s;
 
   /* ===== Typography ===== */
-  --font-body: 'Nunito', system-ui, sans-serif;
-  --font-display: 'Montserrat', system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-display: "Montserrat", system-ui, sans-serif;
 
   font-family: var(--font-body);
   line-height: 1.5;
@@ -78,6 +78,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
