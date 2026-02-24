@@ -4,8 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../context/AuthContext';
 import { useProfile } from '../../context/ProfileContext';
 import { supabase } from '../../lib/supabase';
-import { AVATAR_EMOJIS } from '../../constants/avatars';
+import { Mascot } from '../../components/ui/Mascot';
 import './Settings.css';
+
+const MASCOT_COLORS = ['#3C87D5', '#6EE057', '#A057E0', '#EA60CF', '#F18334'];
 
 export const SettingsPage = () => {
   const { t } = useTranslation();
@@ -13,15 +15,16 @@ export const SettingsPage = () => {
   const { profile, refetchProfile } = useProfile();
   const navigate = useNavigate();
 
-  const [avatar, setAvatar] = useState(profile?.avatar_emoji ?? AVATAR_EMOJIS[0]);
+  const [color, setColor] = useState(profile?.avatar_emoji ?? MASCOT_COLORS[0]);
   const [name, setName] = useState(profile?.name ?? '');
+
   const handleSave = async (e: { preventDefault(): void }) => {
     e.preventDefault();
     if (!name.trim()) return;
 
     await supabase
       .from('profiles')
-      .update({ name: name.trim(), avatar_emoji: avatar })
+      .update({ name: name.trim(), avatar_emoji: color })
       .eq('user_id', user!.id);
 
     await refetchProfile();
@@ -44,18 +47,22 @@ export const SettingsPage = () => {
         {/* Avatar picker */}
         <div className="settings-field">
           <span className="settings-label">{t('settings.avatarLabel')}</span>
-          <div className="settings-avatar-grid">
-            {AVATAR_EMOJIS.map(emoji => (
-              <button
-                key={emoji}
-                type="button"
-                className={`settings-avatar-btn${avatar === emoji ? ' settings-avatar-btn--selected' : ''}`}
-                onClick={() => setAvatar(emoji)}
-                aria-label={emoji}
-              >
-                {emoji}
-              </button>
-            ))}
+          <div className="mascot-picker">
+            <div className="mascot-preview">
+              <Mascot color={color} width={90} height={112} />
+            </div>
+            <div className="mascot-color-swatches">
+              {MASCOT_COLORS.map(c => (
+                <button
+                  key={c}
+                  type="button"
+                  className={`mascot-swatch${color === c ? ' mascot-swatch--selected' : ''}`}
+                  style={{ background: c }}
+                  onClick={() => setColor(c)}
+                  aria-label={c}
+                />
+              ))}
+            </div>
           </div>
         </div>
 

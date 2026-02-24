@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { PieChart, Pie } from "recharts";
+import { Mascot } from "../../components/ui/Mascot";
 import { useAuth } from "../../context/AuthContext";
 import { useProfile } from "../../context/ProfileContext";
 import { useTransactions } from "../../hooks/useTransactions";
@@ -52,7 +53,7 @@ export const OverviewPage = () => {
       {/* Greeting header */}
       <div className="overview-header">
         <div className="overview-greeting">
-          <span className="overview-avatar">{profile?.avatar_emoji}</span>
+          <Mascot color={profile?.avatar_emoji ?? '#3C87D5'} width={36} height={45} />
           <p className="overview-greeting-text">
             {t("overview.greeting", { name: profile?.name })}
           </p>
