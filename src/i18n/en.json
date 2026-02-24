@@ -6,6 +6,7 @@
     "goals": "Goals"
   },
   "overview": {
+    "greeting": "Hello, {{name}}! 👋",
     "balance": "Balance",
     "recentTransactions": "Recent Transactions",
     "noTransactions": "No transactions yet",
@@ -58,6 +59,26 @@
     "save": "Save",
     "cancel": "Cancel",
     "delete": "Delete"
+  },
+  "onboarding": {
+    "title": "Welcome to Kidget!",
+    "subtitle": "Let's set up your profile",
+    "avatarLabel": "Pick an avatar",
+    "nameLabel": "Your name",
+    "namePlaceholder": "e.g. Emma",
+    "submit": "Let's go!",
+    "saving": "Saving..."
+  },
+  "settings": {
+    "title": "Settings",
+    "profileSection": "Profile",
+    "avatarLabel": "Avatar",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "save": "Save Changes",
+    "saving": "Saving...",
+    "saved": "Saved!",
+    "signOut": "Sign Out"
   },
   "auth": {
     "loginTitle": "Welcome to Kidget",

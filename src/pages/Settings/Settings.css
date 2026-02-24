@@ -1,0 +1,157 @@
+/* ===== Page ===== */
+
+.settings-page {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.settings-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+/* ===== Section card ===== */
+
+.settings-section {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settings-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+/* ===== Field ===== */
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* ===== Avatar grid (reused pattern) ===== */
+
+.settings-avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+}
+
+.settings-avatar-btn {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: #f3f4f6;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  padding: 0;
+}
+
+.settings-avatar-btn:hover {
+  background: #e0e7ff;
+}
+
+.settings-avatar-btn--selected {
+  border-color: #6366f1;
+  background: #eef2ff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* ===== Name input ===== */
+
+.settings-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #111827;
+  background: #f9fafb;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.settings-input:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+}
+
+/* ===== Save button ===== */
+
+.settings-save-btn {
+  width: 100%;
+  padding: 13px;
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: filter 0.15s;
+}
+
+.settings-save-btn:hover:not(:disabled) {
+  filter: brightness(0.93);
+}
+
+.settings-save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Saved feedback ===== */
+
+.settings-saved {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #10b981;
+}
+
+/* ===== Sign out ===== */
+
+.settings-signout-btn {
+  width: 100%;
+  padding: 13px;
+  background: none;
+  border: 1.5px solid #fecaca;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ef4444;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s, color 0.15s;
+}
+
+.settings-signout-btn:hover {
+  background: #fef2f2;
+}
