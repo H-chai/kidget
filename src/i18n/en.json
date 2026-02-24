@@ -13,7 +13,10 @@
     "levelProgress": "Level Progress",
     "choresToLevelUp": "{{count}} more chores to level up",
     "maxLevel": "Max level reached!",
-    "activeGoal": "Saving for"
+    "activeGoal": "Saving for",
+    "moreToGo": "{{amount}} more to go!",
+    "moreToGoLabel": "more to go!",
+    "seeAllGoals": "See all goals →"
   },
   "history": {
     "title": "History",
