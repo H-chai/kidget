@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../context/AuthContext';
+import { useProfile } from '../../context/ProfileContext';
 import { useTransactions } from '../../hooks/useTransactions';
 import { useGoals } from '../../hooks/useGoals';
 import { calculateBalance, calculateLevel, choresToNextLevel, levelProgressPercent } from '../../utils';
@@ -10,6 +12,7 @@ import './Overview.css';
 export const OverviewPage = () => {
   const { t } = useTranslation();
   const { user } = useAuth();
+  const { profile } = useProfile();
   const { transactions, loading: txLoading } = useTransactions(user!.id);
   const { goals, loading: goalsLoading } = useGoals(user!.id);
 
@@ -37,6 +40,19 @@ export const OverviewPage = () => {
 
   return (
     <div className="overview-page">
+
+      {/* Greeting header */}
+      <div className="overview-header">
+        <div className="overview-greeting">
+          <span className="overview-avatar">{profile?.avatar_emoji}</span>
+          <p className="overview-greeting-text">
+            {t('overview.greeting', { name: profile?.name })}
+          </p>
+        </div>
+        <Link to="/settings" className="overview-settings-btn" aria-label={t('settings.title')}>
+          ⚙️
+        </Link>
+      </div>
 
       {/* Balance */}
       <Card className="balance-card">

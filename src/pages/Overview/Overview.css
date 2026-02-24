@@ -13,6 +13,46 @@
   color: #9ca3af;
 }
 
+/* ===== Greeting header ===== */
+
+.overview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overview-greeting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.overview-avatar {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.overview-greeting-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.overview-settings-btn {
+  font-size: 22px;
+  line-height: 1;
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s;
+}
+
+.overview-settings-btn:hover {
+  background: #e5e7eb;
+}
+
 /* ===== Section label ===== */
 
 .section-label {
