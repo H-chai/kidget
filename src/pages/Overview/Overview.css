@@ -5,6 +5,15 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+@media (min-width: 769px) {
+  .overview-page {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /* ===== Hero (yellow background) ===== */
@@ -12,8 +21,10 @@
 .overview-hero {
   position: relative;
   background: var(--color-accent);
-  /* cancel page padding to go full-width */
-  margin: -16px -16px 0;
+  /* full viewport width regardless of parent max-width */
+  margin-top: -16px;
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
   padding: 16px 16px 96px;
   border-radius: 0 0 var(--radius-3xl) var(--radius-3xl);
 }
@@ -42,6 +53,9 @@
   gap: 8px;
   margin-top: 20px;
   padding-bottom: 16px;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .overview-greeting-mascot {
@@ -75,7 +89,7 @@
     color var(--duration);
   position: absolute;
   top: 16px;
-  right: 16px;
+  right: max(16px, calc((100vw - 768px) / 2 + 16px));
 }
 
 .overview-settings-btn:hover {
