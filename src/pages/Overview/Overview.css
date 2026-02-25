@@ -15,16 +15,26 @@
 
 /* ===== Greeting header ===== */
 
-.overview-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+@keyframes greeting-sway {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
 }
 
 .overview-greeting {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.overview-greeting-mascot {
+  transform-origin: bottom center;
+  animation: greeting-sway 2.4s ease-in-out infinite;
 }
 
 .overview-avatar {
@@ -33,7 +43,7 @@
 }
 
 .overview-greeting-text {
-  font-size: 18px;
+  font-size: 32px;
   font-weight: 700;
   font-family: var(--font-display);
   color: var(--color-text);
@@ -41,17 +51,24 @@
 }
 
 .overview-settings-btn {
-  font-size: 22px;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
   text-decoration: none;
-  padding: 6px;
   border-radius: var(--radius-md);
   -webkit-tap-highlight-color: transparent;
-  transition: background var(--duration);
+  transition:
+    background var(--duration),
+    color var(--duration);
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
 
 .overview-settings-btn:hover {
   background: var(--color-border);
+  color: var(--color-text);
 }
 
 /* ===== Section label ===== */
@@ -68,7 +85,7 @@
 /* ===== Balance card ===== */
 
 .balance-card {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #5BA3E8 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #5ba3e8 100%);
   color: var(--color-surface-card);
   text-align: center;
   padding: 32px 20px;

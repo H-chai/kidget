@@ -6,7 +6,7 @@
     "goals": "Goals"
   },
   "overview": {
-    "greeting": "Hello, {{name}}! 👋",
+    "greeting": "Hello, {{name}}!",
     "balance": "Balance",
     "recentTransactions": "Recent Transactions",
     "noTransactions": "No transactions yet",
