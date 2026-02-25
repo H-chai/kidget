@@ -4,7 +4,7 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 
 /* ===== Hero (yellow background) ===== */
@@ -41,7 +41,7 @@
   align-items: center;
   gap: 8px;
   margin-top: 20px;
-  padding-bottom: 24px;
+  padding-bottom: 16px;
 }
 
 .overview-greeting-mascot {
@@ -86,12 +86,12 @@
 /* ===== Section label ===== */
 
 .section-label {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: var(--color-text-subtle);
-  margin: 0 0 10px;
+  color: var(--color-text);
+  margin: 0 0 6px;
 }
 
 /* ===== Balance card ===== */
@@ -107,7 +107,7 @@
 }
 
 .balance-label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   opacity: 0.85;
   margin: 0 0 6px;
@@ -116,8 +116,8 @@
 }
 
 .balance-amount {
-  font-size: 48px;
-  font-weight: 800;
+  font-size: 40px;
+  font-weight: 700;
   font-family: var(--font-display);
   margin: 0;
   letter-spacing: -2px;
@@ -127,7 +127,7 @@
 }
 
 .balance-symbol {
-  font-size: 40px;
+  font-size: 32px;
   margin-right: 4px;
 }
 
@@ -149,7 +149,12 @@
   border-radius: var(--radius-2xl);
   padding: 16px 14px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.goal-mini-top {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
@@ -163,45 +168,66 @@
 }
 
 .goal-mini-title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
+  font-family: var(--font-display);
   color: var(--color-text);
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  min-width: 0;
+  line-height: 1.2;
 }
 
 .goal-mini-amount {
-  font-size: 30px;
-  font-weight: 800;
+  font-size: clamp(22px, 3.5vw, 28px);
+  font-weight: 700;
   font-family: var(--font-display);
   color: var(--color-text);
   margin: 0;
   line-height: 1.1;
   letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+}
+
+.goal-mini-symbol {
+  font-size: clamp(18px, 3.5vw, 20px);
+  margin-right: 2px;
 }
 
 .goal-mini-more {
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   margin: 0;
+  white-space: nowrap;
 }
 
 .goal-mini-chart-wrap {
-  width: 72px;
-  height: 72px;
+  width: 56px;
+  height: 56px;
   flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .goal-mini-card {
+    padding: 16px 24px;
+  }
+
+  .goal-mini-chart-wrap {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 .goals-see-all {
   display: block;
   text-align: right;
-  margin-top: 8px;
-  font-size: 14px;
+  margin-top: 16px;
+  font-size: 16px;
   font-weight: 600;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   text-decoration: none;
 }
 
@@ -323,7 +349,8 @@
   color: var(--color-expense);
 }
 
-.no-transactions {
+.no-transactions,
+.no-goals {
   text-align: center;
   padding: 20px 0;
   color: var(--color-text-subtle);

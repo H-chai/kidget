@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { PieChart, Pie } from "recharts";
@@ -19,13 +20,26 @@ import { ProgressBar } from "../../components/ui/ProgressBar";
 import "./Overview.css";
 
 const GOAL_CARD_COLORS = [
-  { bg: "#FFC9A2", fill: "#F18334", track: "#E9E4E4" },
-  { bg: "#D6FFBB", fill: "#6EE057", track: "#E9E4E4" },
+  { bg: "#FFC9A2", fill: "#F18334", track: "rgba(255, 255, 255, 0.2)" },
+  { bg: "#D6FFBB", fill: "#6EE057", track: "rgba(255, 255, 255, 0.2)" },
 ];
 
 export const OverviewPage = () => {
   const { t } = useTranslation();
   const { user } = useAuth();
+
+  const [isWide, setIsWide] = useState(
+    () => window.matchMedia("(min-width: 768px)").matches,
+  );
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const handler = (e: MediaQueryListEvent) => setIsWide(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  const chartSize = isWide ? 72 : 56;
+  const chartCenter = chartSize / 2;
   const { profile } = useProfile();
   const { transactions, loading: txLoading } = useTransactions(user!.id);
   const { goals, loading: goalsLoading } = useGoals(user!.id);
@@ -89,66 +103,80 @@ export const OverviewPage = () => {
       </Card>
 
       {/* Active savings goals */}
-      {displayGoals.length > 0 && (
-        <div>
-          <p className="section-label">{t("overview.activeGoal")}</p>
-          <div className="goals-grid">
-            {displayGoals.map((goal, i) => {
-              const progress = Math.max(
-                0,
-                Math.min(100, (balance / goal.target_amount) * 100),
-              );
-              const remaining = Math.max(0, goal.target_amount - balance);
-              const colors = GOAL_CARD_COLORS[i % GOAL_CARD_COLORS.length];
-              const donutData = [
-                { value: Math.max(0, progress), fill: colors.fill },
-                { value: Math.max(0, 100 - progress), fill: colors.track },
-              ];
-              return (
-                <div
-                  key={goal.id}
-                  className="goal-mini-card"
-                  style={{ background: colors.bg }}
-                >
-                  <div className="goal-mini-left">
-                    <p className="goal-mini-title">{goal.title}</p>
-                    <p className="goal-mini-amount">
-                      {t("common.currency", { amount: remaining })}
-                    </p>
+      <div>
+        <p className="section-label">{t("overview.activeGoal")}</p>
+        {activeGoals.length === 0 ? (
+          <Card>
+            <p className="no-goals">{t("overview.noGoals")}</p>
+          </Card>
+        ) : (
+          <>
+            <div className="goals-grid">
+              {displayGoals.map((goal, i) => {
+                const progress = Math.max(
+                  0,
+                  Math.min(100, (balance / goal.target_amount) * 100),
+                );
+                const remaining = Math.max(0, goal.target_amount - balance);
+                const colors = GOAL_CARD_COLORS[i % GOAL_CARD_COLORS.length];
+                const donutData = [
+                  { value: Math.max(0, progress), fill: colors.fill },
+                  { value: Math.max(0, 100 - progress), fill: colors.track },
+                ];
+                return (
+                  <div
+                    key={goal.id}
+                    className="goal-mini-card"
+                    style={{ background: colors.bg }}
+                  >
+                    <div className="goal-mini-top">
+                      <div className="goal-mini-left">
+                        <p className="goal-mini-title">{goal.title}</p>
+                        <p className="goal-mini-amount">
+                          <span className="goal-mini-symbol">
+                            {t("common.currencySymbol")}
+                          </span>
+                          {goal.target_amount}
+                        </p>
+                      </div>
+                      <div className="goal-mini-chart-wrap">
+                        <PieChart
+                          width={chartSize}
+                          height={chartSize}
+                          margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+                        >
+                          <Pie
+                            data={donutData}
+                            cx={chartCenter}
+                            cy={chartCenter}
+                            innerRadius={Math.round((16 / 56) * chartSize)}
+                            outerRadius={Math.round((26 / 56) * chartSize)}
+                            startAngle={90}
+                            endAngle={-270}
+                            dataKey="value"
+                            stroke="#111"
+                            strokeWidth={1}
+                          />
+                        </PieChart>
+                      </div>
+                    </div>
                     <p className="goal-mini-more">
-                      {t("overview.moreToGoLabel")}
+                      {remaining === 0
+                        ? t("overview.goalReached")
+                        : `${t("common.currency", { amount: remaining })} ${t("overview.moreToGoLabel")}`}
                     </p>
                   </div>
-                  <div className="goal-mini-chart-wrap">
-                    <PieChart
-                      width={72}
-                      height={72}
-                      margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
-                    >
-                      <Pie
-                        data={donutData}
-                        cx={36}
-                        cy={36}
-                        innerRadius={24}
-                        outerRadius={34}
-                        startAngle={90}
-                        endAngle={-270}
-                        dataKey="value"
-                        strokeWidth={0}
-                      />
-                    </PieChart>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          {hasMoreGoals && (
-            <Link to="/goals" className="goals-see-all">
-              {t("overview.seeAllGoals")}
-            </Link>
-          )}
-        </div>
-      )}
+                );
+              })}
+            </div>
+            {hasMoreGoals && (
+              <Link to="/goals" className="goals-see-all">
+                {t("overview.seeAllGoals")}
+              </Link>
+            )}
+          </>
+        )}
+      </div>
 
       {/* Level progress */}
       <Card>

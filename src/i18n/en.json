@@ -16,7 +16,9 @@
     "activeGoal": "Saving for",
     "moreToGo": "{{amount}} more to go!",
     "moreToGoLabel": "more to go!",
-    "seeAllGoals": "See all goals →"
+    "seeAllGoals": "See all goals →",
+    "noGoals": "No goals yet — add one!",
+    "goalReached": "Goal reached! 🎉"
   },
   "history": {
     "title": "History",
@@ -108,7 +110,7 @@
     "edit": "Edit",
     "loading": "Loading...",
     "error": "Something went wrong",
-    "currency": "$ {{amount}}",
+    "currency": "${{amount}}",
     "currencySymbol": "$"
   },
   "badge": {
