@@ -18,6 +18,7 @@ import {
 } from "../../utils";
 import { Card } from "../../components/ui/Card";
 import { ProgressBar } from "../../components/ui/ProgressBar";
+import { TransactionIcon } from "../../components/ui/TransactionIcon";
 import "./Overview.css";
 
 const GOAL_CARD_COLORS = [
@@ -63,7 +64,8 @@ export const OverviewPage = () => {
   const displayGoals = activeGoals.slice(0, 2);
   const hasMoreGoals = activeGoals.length > 2;
 
-  const recentTransactions = transactions.slice(0, 5);
+  const recentTransactions = transactions.slice(0, 4);
+  const hasMoreTransactions = transactions.length > 4;
 
   return (
     <div className="overview-page">
@@ -206,11 +208,7 @@ export const OverviewPage = () => {
             <div className="transaction-list">
               {recentTransactions.map((tx) => (
                 <div key={tx.id} className="transaction-item">
-                  <div
-                    className={`transaction-icon transaction-icon--${tx.type}`}
-                  >
-                    {tx.type === "income" ? "⭐" : "💸"}
-                  </div>
+                  <TransactionIcon icon={tx.icon} type={tx.type} size={36} />
                   <div className="transaction-desc">
                     <p className="transaction-description">{tx.description}</p>
                     <p className="transaction-date">{tx.date}</p>
@@ -219,13 +217,18 @@ export const OverviewPage = () => {
                     className={`transaction-amount transaction-amount--${tx.type}`}
                   >
                     {tx.type === "income" ? "+" : "−"}
-                    {t("common.currency", { amount: tx.amount })}
+                    {tx.amount}
                   </span>
                 </div>
               ))}
             </div>
           )}
         </Card>
+        {hasMoreTransactions && (
+          <Link to="/history" className="goals-see-all">
+            {t("overview.seeAllHistory")}
+          </Link>
+        )}
       </div>
     </div>
   );

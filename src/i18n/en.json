@@ -17,6 +17,7 @@
     "moreToGo": "{{amount}} more to go!",
     "moreToGoLabel": "more to go!",
     "seeAllGoals": "See all goals →",
+    "seeAllHistory": "See all history →",
     "noGoals": "No goals yet — add one!",
     "goalReached": "Goal reached! 🎉"
   },
@@ -40,7 +41,8 @@
     "date": "Date",
     "submit": "Save",
     "cancel": "Cancel",
-    "invalidAmount": "Please enter a valid amount (whole number)"
+    "invalidAmount": "Please enter a valid amount (whole number)",
+    "icon": "Icon"
   },
   "badges": {
     "title": "Badges & Level",

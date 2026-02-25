@@ -4,6 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import { supabase } from '../../lib/supabase';
 import { useTransactions } from '../../hooks/useTransactions';
 import { Card } from '../../components/ui/Card';
+import { TransactionIcon } from '../../components/ui/TransactionIcon';
 import type { Transaction, TransactionType } from '../../types';
 import './History.css';
 
@@ -219,9 +220,7 @@ export const HistoryPage = () => {
                   </form>
                 ) : (
                   <>
-                    <div className={`history-icon history-icon--${tx.type}`}>
-                      {tx.type === 'income' ? '⭐' : '💸'}
-                    </div>
+                    <TransactionIcon icon={tx.icon} type={tx.type} size={36} />
                     <div className="history-desc">
                       <p className="history-description">{tx.description}</p>
                       <p className="history-date">{tx.date}</p>

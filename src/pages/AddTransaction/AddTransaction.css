@@ -121,6 +121,34 @@
   letter-spacing: -1px;
 }
 
+/* ===== Icon picker ===== */
+
+.icon-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.icon-picker-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2.5px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color var(--duration),
+    transform var(--duration-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.icon-picker-btn--selected {
+  border-color: var(--color-text);
+  transform: scale(1.15);
+}
+
 /* ===== Error ===== */
 
 .add-error {

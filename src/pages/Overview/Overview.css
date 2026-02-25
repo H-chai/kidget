@@ -356,7 +356,8 @@
 
 .transaction-description {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: var(--font-display);
   color: var(--color-text);
   margin: 0 0 2px;
   white-space: nowrap;
@@ -366,12 +367,12 @@
 
 .transaction-date {
   font-size: 12px;
-  color: var(--color-text-subtle);
+  color: var(--color-text-muted);
   margin: 0;
 }
 
 .transaction-amount {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 700;
   font-family: var(--font-display);
   flex-shrink: 0;

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../context/AuthContext';
 import { supabase } from '../../lib/supabase';
 import type { TransactionType } from '../../types';
+import { TRANSACTION_ICONS } from '../../constants/icons';
 import './AddTransaction.css';
 
 const todayStr = (): string => new Date().toISOString().slice(0, 10);
@@ -17,6 +18,7 @@ export const AddTransactionPage = () => {
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
   const [date, setDate] = useState(todayStr);
+  const [icon, setIcon] = useState<string | null>(TRANSACTION_ICONS[0].id);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -39,6 +41,7 @@ export const AddTransactionPage = () => {
       amount: amountInt,
       description: description.trim(),
       date,
+      icon,
     });
 
     if (error) {
@@ -120,6 +123,25 @@ export const AddTransactionPage = () => {
             }
             required
           />
+        </div>
+
+        {/* Icon picker */}
+        <div className="add-field">
+          <label className="add-label">{t('addTransaction.icon')}</label>
+          <div className="icon-picker">
+            {TRANSACTION_ICONS.map(({ id, Component, bg, color }) => (
+              <button
+                key={id}
+                type="button"
+                className={`icon-picker-btn${icon === id ? ' icon-picker-btn--selected' : ''}`}
+                style={{ background: bg }}
+                onClick={() => setIcon(id)}
+                aria-label={id}
+              >
+                <Component size={20} color={color} />
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Date */}

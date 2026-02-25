@@ -7,6 +7,7 @@ export type Transaction = {
   amount: number; // integer (whole units — yen, kr, etc.)
   description: string;
   date: string; // YYYY-MM-DD
+  icon: string | null;
   created_at: string; // ISO 8601
 };
 
