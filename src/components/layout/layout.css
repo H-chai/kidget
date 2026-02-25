@@ -41,7 +41,7 @@
 }
 
 .nav-item--active {
-  color: var(--color-primary);
+  color: var(--user-color, var(--color-primary));
 }
 
 .nav-icon {
@@ -64,7 +64,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: var(--user-color, var(--color-primary));
   color: var(--color-surface-card);
   font-size: 28px;
   line-height: 1;
@@ -76,12 +76,13 @@
   bottom: 14px;
   transition:
     background var(--duration),
+    filter var(--duration),
     transform var(--duration-fast);
   -webkit-tap-highlight-color: transparent;
 }
 
 .nav-fab--active {
-  background: var(--color-primary-hover);
+  filter: brightness(0.88);
 }
 
 .nav-fab:active {

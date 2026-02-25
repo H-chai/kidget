@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { MdHomeFilled, MdEventNote } from 'react-icons/md';
 import { RiMedalFill } from 'react-icons/ri';
 import { LuGoal } from 'react-icons/lu';
+import { useProfile } from '../../context/ProfileContext';
 import './layout.css';
 
 const navItemClass = ({ isActive }: { isActive: boolean }) =>
@@ -13,9 +14,11 @@ const fabClass = ({ isActive }: { isActive: boolean }) =>
 
 export const BottomNav = () => {
   const { t } = useTranslation();
+  const { profile } = useProfile();
+  const userColor = profile?.avatar_emoji ?? 'var(--color-primary)';
 
   return (
-    <nav className="bottom-nav">
+    <nav className="bottom-nav" style={{ '--user-color': userColor } as React.CSSProperties}>
       <NavLink to="/" end className={navItemClass}>
         <MdHomeFilled className="nav-icon" />
         <span className="nav-label">{t('nav.overview')}</span>
