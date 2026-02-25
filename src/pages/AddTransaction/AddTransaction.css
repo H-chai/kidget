@@ -102,7 +102,9 @@
   outline: none;
   width: 100%;
   box-sizing: border-box;
-  transition: border-color var(--duration), background var(--duration);
+  transition:
+    border-color var(--duration),
+    background var(--duration);
 }
 
 .add-input:focus {
@@ -122,7 +124,7 @@
 /* ===== Error ===== */
 
 .add-error {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-danger);
   background: var(--color-danger-bg);
   border: 1px solid var(--color-danger-border);
@@ -142,7 +144,9 @@
   font-size: 17px;
   font-weight: 700;
   cursor: pointer;
-  transition: filter var(--duration), transform var(--duration-fast);
+  transition:
+    filter var(--duration),
+    transform var(--duration-fast);
   margin-top: 4px;
   -webkit-tap-highlight-color: transparent;
 }

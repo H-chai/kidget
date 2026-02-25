@@ -85,14 +85,13 @@
 /* ===== Balance card ===== */
 
 .balance-card {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #5ba3e8 100%);
-  color: var(--color-surface-card);
-  text-align: center;
-  padding: 32px 20px;
+  background: var(--color-surface-card);
+  color: var(--color-text);
+  padding: 32px;
 }
 
 .balance-label {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   opacity: 0.85;
   margin: 0 0 6px;
@@ -135,7 +134,7 @@
 }
 
 .goal-mini-title {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text);
   margin: 0;
@@ -171,7 +170,7 @@
   display: block;
   text-align: right;
   margin-top: 8px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text-muted);
   text-decoration: none;
@@ -211,7 +210,7 @@
 }
 
 .level-subtitle {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-muted);
   margin: 0;
 }

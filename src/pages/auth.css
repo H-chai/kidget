@@ -70,7 +70,9 @@
   color: var(--color-text);
   background: var(--color-surface-page);
   outline: none;
-  transition: border-color var(--duration), background var(--duration);
+  transition:
+    border-color var(--duration),
+    background var(--duration);
 }
 
 .auth-input:focus {
@@ -79,7 +81,7 @@
 }
 
 .auth-error {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-danger);
   background: var(--color-danger-bg);
   border: 1px solid var(--color-danger-border);
@@ -88,7 +90,7 @@
 }
 
 .auth-success {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-income-dark);
   background: var(--color-income-bg);
   border: 1px solid var(--color-income-border);
@@ -107,7 +109,9 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background var(--duration), transform var(--duration-fast);
+  transition:
+    background var(--duration),
+    transform var(--duration-fast);
   margin-top: 4px;
 }
 
