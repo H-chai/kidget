@@ -1,6 +1,7 @@
 /* ===== Page ===== */
 
 .onboarding-page {
+  position: relative;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -57,6 +58,91 @@
   text-transform: uppercase;
   letter-spacing: 0.07em;
   margin: 0 0 8px;
+}
+
+/* ===== Language selector ===== */
+
+.onboarding-lang {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+}
+
+.onboarding-lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 12px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background var(--duration);
+}
+
+.onboarding-lang-btn:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.onboarding-lang-chevron {
+  transition: transform var(--duration);
+}
+
+.onboarding-lang-chevron--open {
+  transform: rotate(180deg);
+}
+
+.onboarding-lang-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 140px;
+  background: var(--color-surface-card);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-modal);
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  overflow: hidden;
+}
+
+.onboarding-lang-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--duration);
+}
+
+.onboarding-lang-item--active {
+  color: var(--color-text);
+  background: var(--color-surface-app);
+}
+
+.onboarding-lang-item--disabled {
+  color: var(--color-text-subtle);
+  cursor: default;
+}
+
+.onboarding-lang-soon {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-text-subtle);
+  background: var(--color-surface-hover);
+  border-radius: var(--radius-full);
+  padding: 2px 7px;
 }
 
 /* ===== Mascot trio (above card) ===== */
