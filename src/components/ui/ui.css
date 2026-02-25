@@ -10,7 +10,7 @@
 /* ===== ProgressBar ===== */
 
 .progress-track {
-  height: 8px;
+  height: 10px;
   background: rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-full);
   overflow: hidden;

@@ -18,13 +18,13 @@
 /* ===== Level card ===== */
 
 .level-card {
-  background: var(--color-accent);
+  background: var(--color-surface-card);
   border-radius: var(--radius-2xl);
   padding: 20px;
   color: var(--color-text);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .level-top-row {

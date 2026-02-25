@@ -5,6 +5,7 @@ import { PieChart, Pie } from "recharts";
 import { MdSettings } from "react-icons/md";
 import { Mascot } from "../../components/ui/Mascot";
 import { MascotFace } from "../../components/ui/MascotFace";
+import trioRight from "../../assets/mascots/trio/trio-right.svg";
 import { useAuth } from "../../context/AuthContext";
 import { useProfile } from "../../context/ProfileContext";
 import { useTransactions } from "../../hooks/useTransactions";
@@ -179,7 +180,8 @@ export const OverviewPage = () => {
       </div>
 
       {/* Level progress */}
-      <Card>
+      <Card className="level-card">
+        <img src={trioRight} alt="" className="level-mascot" />
         <div className="level-header">
           <div className="level-badge">Lv {level}</div>
           <div>

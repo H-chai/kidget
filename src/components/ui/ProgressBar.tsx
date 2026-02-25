@@ -1,11 +1,11 @@
-import './ui.css';
+import "./ui.css";
 
 type ProgressBarProps = {
   value: number; // 0–100
   color?: string;
 };
 
-export const ProgressBar = ({ value, color = '#6366f1' }: ProgressBarProps) => (
+export const ProgressBar = ({ value, color = "#fada66" }: ProgressBarProps) => (
   <div className="progress-track">
     <div
       className="progress-fill"
