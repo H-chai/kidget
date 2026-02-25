@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { PieChart, Pie } from "recharts";
 import { MdSettings } from "react-icons/md";
+import { Mascot } from "../../components/ui/Mascot";
 import { MascotFace } from "../../components/ui/MascotFace";
 import { useAuth } from "../../context/AuthContext";
 import { useProfile } from "../../context/ProfileContext";
@@ -51,30 +52,40 @@ export const OverviewPage = () => {
 
   return (
     <div className="overview-page">
-      <Link
-        to="/settings"
-        className="overview-settings-btn"
-        aria-label={t("settings.title")}
-      >
-        <MdSettings size={24} />
-      </Link>
-      {/* Greeting header */}
-      <div className="overview-greeting">
-        <MascotFace
-          color={profile?.avatar_emoji ?? "#3C87D5"}
-          width={32}
-          height="auto"
-          className="overview-greeting-mascot"
-        />
-        <h1 className="overview-greeting-text">
-          {t("overview.greeting", { name: profile?.name })}
-        </h1>
+      {/* Yellow hero: settings + greeting */}
+      <div className="overview-hero">
+        <Link
+          to="/settings"
+          className="overview-settings-btn"
+          aria-label={t("settings.title")}
+        >
+          <MdSettings size={24} />
+        </Link>
+        <div className="overview-greeting">
+          <MascotFace
+            color={profile?.avatar_emoji ?? "#3C87D5"}
+            width={32}
+            height="auto"
+            className="overview-greeting-mascot"
+          />
+          <h1 className="overview-greeting-text">
+            {t("overview.greeting", { name: profile?.name })}
+          </h1>
+        </div>
       </div>
 
-      {/* Balance */}
+      {/* Balance — overlaps the hero bottom */}
       <Card className="balance-card">
         <p className="balance-label">{t("overview.balance")}</p>
-        <p className="balance-amount">{balance}</p>
+        <p className="balance-amount">
+          <span className="balance-symbol">{t("common.currencySymbol")}</span>
+          {balance}
+        </p>
+        <Mascot
+          color={profile?.avatar_emoji ?? "#3C87D5"}
+          height={120}
+          className="balance-mascot"
+        />
       </Card>
 
       {/* Active savings goals */}
@@ -101,7 +112,9 @@ export const OverviewPage = () => {
                 >
                   <div className="goal-mini-left">
                     <p className="goal-mini-title">{goal.title}</p>
-                    <p className="goal-mini-amount">{remaining}</p>
+                    <p className="goal-mini-amount">
+                      {t("common.currency", { amount: remaining })}
+                    </p>
                     <p className="goal-mini-more">
                       {t("overview.moreToGoLabel")}
                     </p>
@@ -176,7 +189,7 @@ export const OverviewPage = () => {
                     className={`transaction-amount transaction-amount--${tx.type}`}
                   >
                     {tx.type === "income" ? "+" : "−"}
-                    {tx.amount}
+                    {t("common.currency", { amount: tx.amount })}
                   </span>
                 </div>
               ))}

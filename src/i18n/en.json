@@ -107,7 +107,9 @@
     "delete": "Delete",
     "edit": "Edit",
     "loading": "Loading...",
-    "error": "Something went wrong"
+    "error": "Something went wrong",
+    "currency": "$ {{amount}}",
+    "currencySymbol": "$"
   },
   "badge": {
     "first_chore": {

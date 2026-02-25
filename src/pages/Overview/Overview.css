@@ -1,10 +1,21 @@
 /* ===== Page layout ===== */
 
 .overview-page {
-  padding: 20px 16px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+/* ===== Hero (yellow background) ===== */
+
+.overview-hero {
+  position: relative;
+  background: var(--color-accent);
+  /* cancel page padding to go full-width */
+  margin: -16px -16px 0;
+  padding: 16px 16px 96px;
+  border-radius: 0 0 var(--radius-3xl) var(--radius-3xl);
 }
 
 .overview-loading {
@@ -29,7 +40,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 24px;
+  margin-top: 20px;
+  padding-bottom: 24px;
 }
 
 .overview-greeting-mascot {
@@ -88,6 +100,10 @@
   background: var(--color-surface-card);
   color: var(--color-text);
   padding: 32px;
+  position: relative;
+  z-index: 1;
+  /* pull up to overlap the hero bottom: 44px (hero padding-bottom) + 16px (flex gap) */
+  margin-top: calc(-96px - 16px);
 }
 
 .balance-label {
@@ -100,12 +116,25 @@
 }
 
 .balance-amount {
-  font-size: 52px;
+  font-size: 48px;
   font-weight: 800;
   font-family: var(--font-display);
   margin: 0;
   letter-spacing: -2px;
   line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.balance-symbol {
+  font-size: 40px;
+  margin-right: 4px;
+}
+
+.balance-mascot {
+  position: absolute;
+  right: 32px;
+  bottom: 0;
 }
 
 /* ===== Goals grid ===== */
