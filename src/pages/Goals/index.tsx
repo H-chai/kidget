@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../context/AuthContext';
+import { useProfile } from '../../context/ProfileContext';
+import { MascotFace } from '../../components/ui/MascotFace';
 import { supabase } from '../../lib/supabase';
 import { useGoals } from '../../hooks/useGoals';
 import { useTransactions } from '../../hooks/useTransactions';
@@ -12,6 +14,7 @@ import './Goals.css';
 export const GoalsPage = () => {
   const { t } = useTranslation();
   const { user } = useAuth();
+  const { profile } = useProfile();
   const { goals, loading, refetch } = useGoals(user!.id);
   const { transactions } = useTransactions(user!.id);
   const balance = calculateBalance(transactions);
@@ -65,7 +68,15 @@ export const GoalsPage = () => {
 
       {/* Header */}
       <div className="goals-header">
-        <h1 className="goals-title">{t('goals.title')}</h1>
+        <div className="goals-heading">
+          <MascotFace
+            color={profile?.avatar_emoji ?? '#3C87D5'}
+            width={32}
+            height="auto"
+            className="goals-heading-mascot"
+          />
+          <h1 className="goals-title">{t('goals.title')}</h1>
+        </div>
         <button
           type="button"
           className={`goals-add-btn${showForm ? ' goals-add-btn--cancel' : ''}`}

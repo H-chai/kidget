@@ -9,10 +9,26 @@
 
 /* ===== Header ===== */
 
+@keyframes goals-sway {
+  0%, 100% { transform: rotate(-6deg); }
+  50%       { transform: rotate(6deg); }
+}
+
 .goals-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.goals-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.goals-heading-mascot {
+  transform-origin: bottom center;
+  animation: goals-sway 3s ease-in-out infinite;
 }
 
 .goals-title {

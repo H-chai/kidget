@@ -14,6 +14,22 @@
   margin: 0 auto;
 }
 
+@keyframes badges-sway {
+  0%, 100% { transform: rotate(-6deg); }
+  50%       { transform: rotate(6deg); }
+}
+
+.badges-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badges-heading-mascot {
+  transform-origin: bottom center;
+  animation: badges-sway 3s ease-in-out infinite;
+}
+
 .badges-page-title {
   font-size: 22px;
   font-weight: 700;

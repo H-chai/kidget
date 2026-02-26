@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../../context/AuthContext";
+import { useProfile } from "../../context/ProfileContext";
+import { MascotFace } from "../../components/ui/MascotFace";
 import { supabase } from "../../lib/supabase";
 import { useTransactions } from "../../hooks/useTransactions";
 import { useGoals } from "../../hooks/useGoals";
@@ -26,6 +28,7 @@ const LEVEL_EMOJI: Record<number, string> = {
 export const BadgesPage = () => {
   const { t } = useTranslation();
   const { user } = useAuth();
+  const { profile } = useProfile();
 
   const { transactions, loading: txLoading } = useTransactions(user!.id);
   const { goals, loading: goalsLoading } = useGoals(user!.id);
@@ -73,7 +76,15 @@ export const BadgesPage = () => {
   return (
     <div className="badges-page">
       <div className="badges-page-inner">
-        <h1 className="badges-page-title">{t("badges.title")}</h1>
+        <div className="badges-heading">
+          <MascotFace
+            color={profile?.avatar_emoji ?? "#3C87D5"}
+            width={32}
+            height="auto"
+            className="badges-heading-mascot"
+          />
+          <h1 className="badges-page-title">{t("badges.title")}</h1>
+        </div>
 
         {/* Level card */}
         <div className="level-card">
