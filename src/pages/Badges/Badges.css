@@ -15,8 +15,13 @@
 }
 
 @keyframes badges-sway {
-  0%, 100% { transform: rotate(-6deg); }
-  50%       { transform: rotate(6deg); }
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
 }
 
 .badges-heading {
@@ -31,8 +36,8 @@
 }
 
 .badges-page-title {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 800;
   font-family: var(--font-display);
   color: var(--color-text);
   margin: 0;
