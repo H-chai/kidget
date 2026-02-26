@@ -29,11 +29,6 @@
   border-radius: 0 0 var(--radius-3xl) var(--radius-3xl);
 }
 
-.overview-loading {
-  text-align: center;
-  padding: 60px 0;
-  color: var(--color-text-subtle);
-}
 
 /* ===== Greeting header ===== */
 

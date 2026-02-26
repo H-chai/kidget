@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { PieChart, Pie } from "recharts";
 import { MdSettings } from "react-icons/md";
+import { LoadingScreen } from "../../components/layout/LoadingScreen";
 import { Mascot } from "../../components/ui/Mascot";
 import { MascotFace } from "../../components/ui/MascotFace";
 import trioRight from "../../assets/mascots/trio/trio-right.svg";
@@ -46,13 +47,7 @@ export const OverviewPage = () => {
   const { transactions, loading: txLoading } = useTransactions(user!.id);
   const { goals, loading: goalsLoading } = useGoals(user!.id);
 
-  if (txLoading || goalsLoading) {
-    return (
-      <div className="overview-page">
-        <p className="overview-loading">{t("common.loading")}</p>
-      </div>
-    );
-  }
+  if (txLoading || goalsLoading) return <LoadingScreen />;
 
   const balance = calculateBalance(transactions);
   const choreCount = transactions.filter((tx) => tx.type === "income").length;

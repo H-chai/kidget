@@ -7,6 +7,7 @@ import { supabase } from "../../lib/supabase";
 import { useTransactions } from "../../hooks/useTransactions";
 import { TransactionIcon } from "../../components/ui/TransactionIcon";
 import { MascotFace } from "../../components/ui/MascotFace";
+import { LoadingScreen } from "../../components/layout/LoadingScreen";
 import type { Transaction, TransactionType } from "../../types";
 import "./History.css";
 
@@ -113,13 +114,7 @@ export const HistoryPage = () => {
     refetch();
   };
 
-  if (loading) {
-    return (
-      <div className="history-page">
-        <p className="history-loading">{t("common.loading")}</p>
-      </div>
-    );
-  }
+  if (loading) return <LoadingScreen />;
 
   return (
     <div className="history-page">
