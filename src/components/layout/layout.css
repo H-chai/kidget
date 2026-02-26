@@ -17,12 +17,17 @@
   height: 64px;
   background: var(--color-surface-card);
   border-top: 1px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   padding-bottom: env(safe-area-inset-bottom);
   z-index: 100;
   box-shadow: var(--shadow-nav);
+}
+
+.bottom-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 768px;
+  margin: 0 auto;
 }
 
 /* ===== Nav Items (4 tabs) ===== */
