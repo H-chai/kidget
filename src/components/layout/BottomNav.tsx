@@ -17,7 +17,7 @@ export const BottomNav = () => {
   const { profile } = useProfile();
   const location = useLocation();
   const userColor = profile?.avatar_emoji ?? "var(--color-primary)";
-  const navBg = location.pathname === "/history" ? "var(--color-surface-app)" : undefined;
+  const navBg = ["/history", "/badges"].includes(location.pathname) ? "var(--color-surface-app)" : undefined;
 
   return (
     <nav
