@@ -6,6 +6,8 @@ import { ProtectedRoute } from './components/layout/ProtectedRoute';
 import { ProfileGuard } from './components/layout/ProfileGuard';
 import { LoginPage } from './pages/Login';
 import { SignupPage } from './pages/Signup';
+import { ForgotPasswordPage } from './pages/ForgotPassword';
+import { ResetPasswordPage } from './pages/ResetPassword';
 import { OnboardingPage } from './pages/Onboarding';
 import { OverviewPage } from './pages/Overview';
 import { HistoryPage } from './pages/History';
@@ -22,6 +24,8 @@ export const App = () => (
           {/* Public routes */}
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
+          <Route path="forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="reset-password" element={<ResetPasswordPage />} />
 
           {/* Authenticated routes */}
           <Route element={<ProtectedRoute />}>

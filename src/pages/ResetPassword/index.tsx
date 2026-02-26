@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../../context/AuthContext";
 import trioLeft from "../../assets/mascots/trio/trio-left.svg";
@@ -7,29 +7,25 @@ import trioCenter from "../../assets/mascots/trio/trio-center.svg";
 import trioRight from "../../assets/mascots/trio/trio-right.svg";
 import "../auth.css";
 
-export const LoginPage = () => {
+export const ResetPasswordPage = () => {
   const { t } = useTranslation();
-  const { signIn, session, loading } = useAuth();
+  const { updatePassword } = useAuth();
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
-
-  if (loading) return null;
-  if (session) return <Navigate to="/" replace />;
 
   const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault();
     setError(null);
     setSubmitting(true);
-    const { error } = await signIn(email, password);
+    const { error } = await updatePassword(password);
     if (error) {
       setError(error);
       setSubmitting(false);
     } else {
-      navigate("/", { replace: true });
+      navigate("/login", { replace: true });
     }
   };
 
@@ -42,35 +38,15 @@ export const LoginPage = () => {
       </div>
       <div className="auth-card">
         <div className="auth-header">
-          <h1 className="auth-title">{t("auth.loginTitle")}</h1>
-          <p className="auth-subtitle">{t("auth.loginSubtitle")}</p>
+          <h1 className="auth-title">{t("auth.resetPasswordTitle")}</h1>
+          <p className="auth-subtitle">{t("auth.resetPasswordSubtitle")}</p>
         </div>
 
         <form className="auth-form" onSubmit={handleSubmit}>
           <div className="auth-field">
-            <label className="auth-label" htmlFor="email">
-              {t("auth.email")}
+            <label className="auth-label" htmlFor="password">
+              {t("auth.newPassword")}
             </label>
-            <input
-              id="email"
-              className="auth-input"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              autoComplete="email"
-            />
-          </div>
-
-          <div className="auth-field">
-            <div className="auth-label-row">
-              <label className="auth-label" htmlFor="password">
-                {t("auth.password")}
-              </label>
-              <Link className="auth-link auth-link--sm" to="/forgot-password">
-                {t("auth.forgotPassword")}
-              </Link>
-            </div>
             <input
               id="password"
               className="auth-input"
@@ -78,23 +54,18 @@ export const LoginPage = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              autoComplete="current-password"
+              minLength={6}
+              autoComplete="new-password"
             />
+            <span className="auth-hint">{t("auth.passwordHint")}</span>
           </div>
 
           {error && <p className="auth-error">{error}</p>}
 
           <button className="auth-button" type="submit" disabled={submitting}>
-            {submitting ? t("auth.loggingIn") : t("auth.login")}
+            {submitting ? t("auth.settingPassword") : t("auth.setPassword")}
           </button>
         </form>
-
-        <div className="auth-footer">
-          {t("auth.noAccount")}{" "}
-          <Link className="auth-link" to="/signup">
-            {t("auth.signupLink")}
-          </Link>
-        </div>
       </div>
     </div>
   );

@@ -1,9 +1,11 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 import type { Session, User } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
 
 type SignInResult = { error: string | null };
 type SignUpResult = { error: string | null; needsConfirmation: boolean };
+type SimpleResult = { error: string | null };
 
 type AuthContextValue = {
   session: Session | null;
@@ -12,6 +14,8 @@ type AuthContextValue = {
   signIn: (email: string, password: string) => Promise<SignInResult>;
   signUp: (email: string, password: string) => Promise<SignUpResult>;
   signOut: () => Promise<void>;
+  resetPassword: (email: string) => Promise<SimpleResult>;
+  updatePassword: (password: string) => Promise<SimpleResult>;
 };
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -50,9 +54,21 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     await supabase.auth.signOut();
   };
 
+  const resetPassword = async (email: string): Promise<SimpleResult> => {
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/reset-password`,
+    });
+    return { error: error?.message ?? null };
+  };
+
+  const updatePassword = async (password: string): Promise<SimpleResult> => {
+    const { error } = await supabase.auth.updateUser({ password });
+    return { error: error?.message ?? null };
+  };
+
   return (
     <AuthContext.Provider
-      value={{ session, user: session?.user ?? null, loading, signIn, signUp, signOut }}
+      value={{ session, user: session?.user ?? null, loading, signIn, signUp, signOut, resetPassword, updatePassword }}
     >
       {children}
     </AuthContext.Provider>

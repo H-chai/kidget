@@ -111,7 +111,20 @@
     "noAccount": "Don't have an account?",
     "haveAccount": "Already have an account?",
     "signupLink": "Sign up",
-    "loginLink": "Log in"
+    "loginLink": "Log in",
+    "forgotPassword": "Forgot password?",
+    "forgotPasswordTitle": "Forgot Password?",
+    "forgotPasswordSubtitle": "Enter your email and we'll send a reset link",
+    "sendResetLink": "Send Reset Link",
+    "sendingResetLink": "Sending...",
+    "resetLinkSentTitle": "Check your email",
+    "resetLinkSentBody": "We sent a password reset link to {{email}}.",
+    "backToLogin": "Back to log in",
+    "resetPasswordTitle": "Set New Password",
+    "resetPasswordSubtitle": "Enter your new password below",
+    "newPassword": "New Password",
+    "setPassword": "Set Password",
+    "settingPassword": "Saving..."
   },
   "common": {
     "save": "Save",
