@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { MdHomeFilled, MdEventNote } from "react-icons/md";
 import { RiMedalFill } from "react-icons/ri";
@@ -15,12 +15,14 @@ const fabClass = ({ isActive }: { isActive: boolean }) =>
 export const BottomNav = () => {
   const { t } = useTranslation();
   const { profile } = useProfile();
+  const location = useLocation();
   const userColor = profile?.avatar_emoji ?? "var(--color-primary)";
+  const navBg = location.pathname === "/history" ? "var(--color-surface-app)" : undefined;
 
   return (
     <nav
       className="bottom-nav"
-      style={{ "--user-color": userColor } as React.CSSProperties}
+      style={{ "--user-color": userColor, background: navBg } as React.CSSProperties}
     >
       <div className="bottom-nav-inner">
         <NavLink to="/" end className={navItemClass}>

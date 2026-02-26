@@ -1,10 +1,41 @@
 /* ===== Page layout ===== */
 
 .history-page {
-  padding: 20px 16px;
+  padding: 32px 16px 96px;
+  min-height: 100vh;
+  background: var(--color-history-bg);
+}
+
+.history-page-inner {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+/* ===== Heading with mascot ===== */
+
+@keyframes history-sway {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+.history-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 0;
+}
+
+.history-heading-mascot {
+  transform-origin: bottom center;
+  animation: history-sway 3s ease-in-out infinite;
 }
 
 .history-title {
@@ -19,87 +50,152 @@
 .history-empty {
   text-align: center;
   padding: 24px 0;
-  color: var(--color-text-subtle);
+  color: var(--color-text-muted);
   font-size: 14px;
   margin: 0;
 }
 
-/* ===== Month filter chips ===== */
-
-.month-filter {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 2px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.month-filter::-webkit-scrollbar {
-  display: none;
-}
-
-.month-chip {
-  flex-shrink: 0;
-  padding: 7px 16px;
-  border-radius: var(--radius-full);
-  border: 1.5px solid var(--color-border);
+.history-empty {
   background: var(--color-surface-card);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition:
-    background var(--duration),
-    border-color var(--duration),
-    color var(--duration);
-  -webkit-tap-highlight-color: transparent;
+  border-radius: var(--radius-xl);
+  padding: 20px;
 }
 
-.month-chip--active {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: var(--color-surface-card);
-}
+/* ===== Balance card ===== */
 
-/* ===== Period summary ===== */
-
-.history-summary {
-  display: flex;
-  gap: 12px;
-}
-
-.summary-item {
-  flex: 1;
+.history-balance-card {
   background: var(--color-surface-card);
-  border-radius: var(--radius-lg);
-  padding: 14px 16px;
+  border-radius: var(--radius-xl);
+  padding: 20px;
   box-shadow: var(--shadow-card-sm);
 }
 
-.summary-label {
-  font-size: 11px;
-  font-weight: 600;
+.history-balance-label {
+  font-size: 16px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: var(--color-text-subtle);
-  margin: 0 0 4px;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  margin: 0 0 10px;
 }
 
-.summary-amount {
-  font-size: 22px;
+.history-balance-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.history-balance-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.history-balance-item:last-child {
+  align-items: flex-end;
+}
+
+.history-balance-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+
+.history-balance-amount {
+  font-size: 24px;
   font-weight: 800;
   font-family: var(--font-display);
-  margin: 0;
   letter-spacing: -0.5px;
 }
 
-.summary-amount--income {
+.history-balance-amount--income {
   color: var(--color-income);
 }
 
-.summary-amount--expense {
+.history-balance-amount--expense {
   color: var(--color-expense);
+}
+
+.history-balance-sublabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===== Month accordion ===== */
+
+.month-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.month-group {
+  background: var(--color-surface-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card-sm);
+}
+
+.month-group-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 12px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.month-group-label {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--color-text);
+  flex: 1;
+  text-align: left;
+}
+
+.month-group-amounts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.month-group-income {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--color-income);
+}
+
+.month-group-expense {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--color-expense);
+}
+
+.month-group-chevron {
+  color: var(--color-text);
+  transition: transform var(--duration);
+  flex-shrink: 0;
+}
+
+.month-group-chevron--open {
+  transform: rotate(180deg);
+}
+
+.month-group-body {
+  border-top: 1px solid var(--color-border-light);
+  padding: 0 20px 20px;
 }
 
 /* ===== Transaction list ===== */
@@ -115,10 +211,6 @@
   gap: 12px;
   padding: 11px 0;
   border-bottom: 1px solid var(--color-border-light);
-}
-
-.history-item:first-child {
-  padding-top: 0;
 }
 
 .history-item:last-child {
@@ -196,7 +288,7 @@
 }
 
 .history-action-btn--edit {
-  color: var(--color-primary-subtle);
+  color: var(--color-text-subtle);
 }
 
 .history-action-btn--edit:hover {
