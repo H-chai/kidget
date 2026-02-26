@@ -14,29 +14,6 @@
   margin: 0 auto;
 }
 
-/* ===== Heading with mascot ===== */
-
-@keyframes history-sway {
-  0%,
-  100% {
-    transform: rotate(-6deg);
-  }
-  50% {
-    transform: rotate(6deg);
-  }
-}
-
-.history-heading {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.history-heading-mascot {
-  transform-origin: bottom center;
-  animation: history-sway 3s ease-in-out infinite;
-}
-
 .history-title {
   font-size: 24px;
   font-weight: 800;

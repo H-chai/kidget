@@ -76,12 +76,12 @@ export const BadgesPage = () => {
   return (
     <div className="badges-page">
       <div className="badges-page-inner">
-        <div className="badges-heading">
+        <div className="page-heading">
           <MascotFace
             color={profile?.avatar_emoji ?? "#3C87D5"}
             width={32}
             height="auto"
-            className="badges-heading-mascot"
+            className="page-heading-mascot"
           />
           <h1 className="badges-page-title">{t("badges.title")}</h1>
         </div>

@@ -119,12 +119,12 @@ export const HistoryPage = () => {
   return (
     <div className="history-page">
       <div className="history-page-inner">
-        <div className="history-heading">
+        <div className="page-heading">
           <MascotFace
             color={profile?.avatar_emoji ?? "#3C87D5"}
             width={32}
             height="auto"
-            className="history-heading-mascot"
+            className="page-heading-mascot"
           />
           <h1 className="history-title">{t("history.title")}</h1>
         </div>

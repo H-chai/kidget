@@ -98,3 +98,21 @@ body {
 a {
   text-decoration: none;
 }
+
+/* ===== Shared page heading with sway mascot ===== */
+
+@keyframes page-heading-sway {
+  0%, 100% { transform: rotate(-6deg); }
+  50%       { transform: rotate(6deg); }
+}
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-heading-mascot {
+  transform-origin: bottom center;
+  animation: page-heading-sway 3s ease-in-out infinite;
+}

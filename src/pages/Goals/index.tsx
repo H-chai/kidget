@@ -68,12 +68,12 @@ export const GoalsPage = () => {
 
       {/* Header */}
       <div className="goals-header">
-        <div className="goals-heading">
+        <div className="page-heading">
           <MascotFace
             color={profile?.avatar_emoji ?? '#3C87D5'}
             width={32}
             height="auto"
-            className="goals-heading-mascot"
+            className="page-heading-mascot"
           />
           <h1 className="goals-title">{t('goals.title')}</h1>
         </div>

@@ -9,11 +9,6 @@
 
 /* ===== Header ===== */
 
-@keyframes goals-sway {
-  0%, 100% { transform: rotate(-6deg); }
-  50%       { transform: rotate(6deg); }
-}
-
 .goals-header {
   display: flex;
   align-items: center;
