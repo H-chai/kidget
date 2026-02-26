@@ -5,6 +5,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  min-height: 100%;
+  background: var(--color-accent);
 }
 
 .settings-title {
@@ -150,6 +152,26 @@
   color: var(--color-income);
 }
 
+/* ===== Delete account ===== */
+
+.settings-delete-btn {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-danger);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 0.8;
+  transition: opacity var(--duration);
+}
+
+.settings-delete-btn:hover {
+  opacity: 1;
+}
+
 /* ===== Sign out ===== */
 
 .settings-signout-btn {
@@ -170,4 +192,107 @@
 
 .settings-signout-btn:hover {
   background: var(--color-danger-bg);
+}
+
+/* ===== Delete confirmation dialog ===== */
+
+.delete-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 24px;
+}
+
+.delete-dialog {
+  background: var(--color-surface-card);
+  border-radius: var(--radius-2xl);
+  padding: 28px 24px 24px;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.delete-dialog-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.delete-dialog-title {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--color-text);
+  margin: 0;
+  text-align: center;
+}
+
+.delete-dialog-body {
+  font-size: 14px;
+  color: var(--color-text-subtle);
+  margin: 0;
+  text-align: left;
+  align-self: stretch;
+  line-height: 1.5;
+}
+
+.delete-dialog-actions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.delete-dialog-cancel {
+  flex: 1;
+  padding: 13px;
+  background: var(--color-surface-page);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-subtle);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: filter var(--duration);
+}
+
+.delete-dialog-cancel:hover {
+  filter: brightness(0.95);
+}
+
+.delete-dialog-confirm {
+  flex: 1;
+  padding: 13px;
+  background: var(--color-danger);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: filter var(--duration);
+}
+
+.delete-dialog-confirm:hover:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+.delete-dialog-confirm:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { FaRegTrashAlt } from 'react-icons/fa';
 import { useAuth } from '../../context/AuthContext';
 import { useProfile } from '../../context/ProfileContext';
 import { supabase } from '../../lib/supabase';
@@ -17,6 +18,8 @@ export const SettingsPage = () => {
 
   const [color, setColor] = useState(profile?.avatar_emoji ?? MASCOT_COLORS[0]);
   const [name, setName] = useState(profile?.name ?? '');
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [deleting, setDeleting] = useState(false);
 
   const handleSave = async (e: { preventDefault(): void }) => {
     e.preventDefault();
@@ -32,6 +35,13 @@ export const SettingsPage = () => {
   };
 
   const handleSignOut = async () => {
+    await signOut();
+    navigate('/login', { replace: true });
+  };
+
+  const handleDeleteAccount = async () => {
+    setDeleting(true);
+    await supabase.rpc('delete_user');
     await signOut();
     navigate('/login', { replace: true });
   };
@@ -88,12 +98,45 @@ export const SettingsPage = () => {
         </button>
       </form>
 
-      {/* Sign out section */}
+      {/* Sign out / Delete section */}
       <div className="settings-section">
         <button type="button" className="settings-signout-btn" onClick={handleSignOut}>
           {t('settings.signOut')}
         </button>
+        <button type="button" className="settings-delete-btn" onClick={() => setShowDeleteDialog(true)}>
+          {t('settings.deleteAccount')}
+        </button>
       </div>
+
+      {/* Delete confirmation dialog */}
+      {showDeleteDialog && (
+        <div className="delete-dialog-overlay" onClick={() => setShowDeleteDialog(false)}>
+          <div className="delete-dialog" onClick={e => e.stopPropagation()}>
+            <div className="delete-dialog-icon">
+              <FaRegTrashAlt size={24} color="#fff" />
+            </div>
+            <h2 className="delete-dialog-title">{t('settings.deleteAccountTitle')}</h2>
+            <p className="delete-dialog-body">{t('settings.deleteAccountConfirm')}</p>
+            <div className="delete-dialog-actions">
+              <button
+                type="button"
+                className="delete-dialog-cancel"
+                onClick={() => setShowDeleteDialog(false)}
+              >
+                {t('common.cancel')}
+              </button>
+              <button
+                type="button"
+                className="delete-dialog-confirm"
+                onClick={handleDeleteAccount}
+                disabled={deleting}
+              >
+                {deleting ? t('common.loading') : t('settings.deleteAccount')}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

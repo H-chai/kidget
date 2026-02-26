@@ -85,7 +85,10 @@
     "save": "Save Changes",
     "saving": "Saving...",
     "saved": "Saved!",
-    "signOut": "Sign Out"
+    "signOut": "Sign Out",
+    "deleteAccount": "Delete Account",
+    "deleteAccountTitle": "Delete Account?",
+    "deleteAccountConfirm": "Are you sure you want to delete your account?"
   },
   "auth": {
     "loginTitle": "Welcome to Kidget",
