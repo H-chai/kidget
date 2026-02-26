@@ -103,6 +103,7 @@ export const SignupPage = () => {
               minLength={6}
               autoComplete="new-password"
             />
+            <span className="auth-hint">{t("auth.passwordHint")}</span>
           </div>
 
           {error && <p className="auth-error">{error}</p>}

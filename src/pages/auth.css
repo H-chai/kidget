@@ -13,13 +13,23 @@
 /* ===== Mascot trio (same animation as onboarding) ===== */
 
 @keyframes sway {
-  0%, 100% { transform: rotate(-6deg); }
-  50%       { transform: rotate(6deg); }
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
 }
 
 @keyframes sway-center {
-  0%, 100% { transform: rotate(-5deg) translateY(0); }
-  50%       { transform: rotate(5deg) translateY(-6px); }
+  0%,
+  100% {
+    transform: rotate(-5deg) translateY(0);
+  }
+  50% {
+    transform: rotate(5deg) translateY(-6px);
+  }
 }
 
 .auth-mascots {
@@ -122,6 +132,11 @@
 .auth-input:focus {
   border-color: var(--color-primary);
   background: var(--color-surface-card);
+}
+
+.auth-hint {
+  font-size: 12px;
+  color: var(--color-text-muted);
 }
 
 .auth-error {

@@ -103,6 +103,7 @@
     "checkEmailBody": "We sent a confirmation link to {{email}}. Click it to activate your account.",
     "email": "Email",
     "password": "Password",
+    "passwordHint": "At least 6 characters",
     "login": "Log In",
     "signup": "Sign Up",
     "loggingIn": "Logging in...",
