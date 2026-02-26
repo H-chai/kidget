@@ -7,16 +7,66 @@
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: var(--color-surface-page);
+  background: var(--color-accent);
+}
+
+/* ===== Mascot trio (same animation as onboarding) ===== */
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-6deg); }
+  50%       { transform: rotate(6deg); }
+}
+
+@keyframes sway-center {
+  0%, 100% { transform: rotate(-5deg) translateY(0); }
+  50%       { transform: rotate(5deg) translateY(-6px); }
+}
+
+.auth-mascots {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 32px;
+  margin-bottom: -16px;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-mascot {
+  display: block;
+  transform-origin: bottom center;
+}
+
+.auth-mascot--side {
+  width: 72px;
+  height: auto;
+  animation: sway 3.2s ease-in-out infinite;
+}
+
+.auth-mascot--side:last-child {
+  animation-duration: 3.6s;
+  animation-delay: -1.6s;
+}
+
+.auth-mascot--center {
+  width: 96px;
+  height: auto;
+  animation: sway-center 2.8s ease-in-out infinite;
+  animation-delay: -0.8s;
 }
 
 .auth-card {
   width: 100%;
   max-width: 400px;
-  background: var(--color-surface-card);
+  background: var(--color-surface-app);
   border-radius: var(--radius-2xl);
   padding: 36px 28px;
   box-shadow: var(--shadow-modal);
+  position: relative;
+  z-index: 0;
 }
 
 .auth-header {
@@ -24,15 +74,9 @@
   margin-bottom: 28px;
 }
 
-.auth-logo {
-  font-size: 52px;
-  line-height: 1;
-  margin-bottom: 12px;
-}
-
 .auth-title {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 800;
   font-family: var(--font-display);
   color: var(--color-text);
   margin: 0 0 6px;
@@ -59,7 +103,7 @@
 .auth-label {
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-text-secondary);
+  color: var(--color-text);
 }
 
 .auth-input {
