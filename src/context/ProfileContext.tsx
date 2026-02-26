@@ -4,6 +4,8 @@ import { supabase } from '../lib/supabase';
 import { useAuth } from './AuthContext';
 import type { Profile } from '../types';
 
+const STORAGE_COLOR_KEY = 'kidget:userColor';
+
 type ProfileContextValue = {
   profile: Profile | null;
   profileLoading: boolean;
@@ -29,7 +31,9 @@ export const ProfileProvider = ({ children }: { children: ReactNode }) => {
       .select('*')
       .eq('user_id', user.id)
       .maybeSingle();
-    setProfile((data as Profile) ?? null);
+    const profile = (data as Profile) ?? null;
+    if (profile) localStorage.setItem(STORAGE_COLOR_KEY, profile.avatar_emoji);
+    setProfile(profile);
     setProfileLoading(false);
   }, [user]);
 
