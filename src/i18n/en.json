@@ -88,7 +88,12 @@
     "signOut": "Sign Out",
     "deleteAccount": "Delete Account",
     "deleteAccountTitle": "Delete Account?",
-    "deleteAccountConfirm": "Are you sure you want to delete your account?"
+    "deleteAccountConfirm": "Are you sure you want to delete your account?",
+    "deleteAccountSubtitle": "You'll permanently lose your:",
+    "deleteAccountItem1": "profile",
+    "deleteAccountItem2": "chores & expenses",
+    "deleteAccountItem3": "goals",
+    "deleteAccountItem4": "badges"
   },
   "auth": {
     "loginTitle": "Welcome to Kidget",

@@ -1,12 +1,65 @@
 /* ===== Page ===== */
 
 .settings-page {
-  padding: 20px 16px;
+  padding: 16px;
+  min-height: 100vh;
+  background: var(--color-accent);
+}
+
+.settings-close-btn {
+  position: fixed;
+  top: 16px;
+  right: max(16px, calc((100vw - 768px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background var(--duration),
+    color var(--duration);
+}
+
+.settings-close-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--color-text);
+}
+
+.setting-page-inner {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  min-height: 100%;
-  background: var(--color-accent);
+  max-width: 768px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes settings-sway {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+.settings-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0 0;
+}
+
+.settings-heading-mascot {
+  transform-origin: bottom center;
+  animation: settings-sway 3s ease-in-out infinite;
 }
 
 .settings-title {
@@ -49,7 +102,8 @@
 .settings-label {
   font-size: 14px;
   font-weight: 600;
-  color: var(--color-text-secondary);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
 }
 
 /* ===== Mascot picker ===== */
@@ -152,24 +206,98 @@
   color: var(--color-income);
 }
 
+/* ===== Trio mascots (floating animation) ===== */
+
+@keyframes mascot-float-left {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  45%,
+  55% {
+    transform: translateY(-28px) rotate(10deg);
+  }
+}
+
+@keyframes mascot-float-center {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  45%,
+  55% {
+    transform: translateY(-28px) rotate(-6deg);
+  }
+}
+
+@keyframes mascot-float-right {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  45%,
+  55% {
+    transform: translateY(-28px) rotate(-10deg);
+  }
+}
+
+.settings-mascots {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  max-width: 400px;
+  position: absolute;
+  bottom: 64px;
+  left: -8px;
+  z-index: 0;
+}
+
+.settings-mascot {
+  display: block;
+  height: auto;
+}
+
+.settings-mascot--lg {
+  width: 160px;
+  animation: mascot-float-left 6.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.settings-mascot--md {
+  width: 80px;
+  animation: mascot-float-center 5.6s cubic-bezier(0.45, 0, 0.55, 1) infinite
+    0.35s;
+}
+
+.settings-mascot--sm {
+  width: 44px;
+  animation: mascot-float-right 3.6s cubic-bezier(0.45, 0, 0.55, 1) infinite
+    0.7s;
+}
+
 /* ===== Delete account ===== */
 
 .settings-delete-btn {
-  width: 100%;
-  padding: 10px;
+  width: fit-content;
+  padding: 20px;
   background: none;
   border: none;
   font-size: 14px;
   font-weight: 600;
-  color: var(--color-danger);
+  color: #555555;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   opacity: 0.8;
   transition: opacity var(--duration);
+  margin-top: -24px;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .settings-delete-btn:hover {
   opacity: 1;
+  text-decoration: underline;
 }
 
 /* ===== Sign out ===== */
@@ -212,7 +340,7 @@
   border-radius: var(--radius-2xl);
   padding: 28px 24px 24px;
   width: 100%;
-  max-width: 320px;
+  max-width: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -241,12 +369,32 @@
 }
 
 .delete-dialog-body {
-  font-size: 14px;
-  color: var(--color-text-subtle);
-  margin: 0;
-  text-align: left;
   align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.delete-dialog-confirm-text {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin: 0;
   line-height: 1.5;
+}
+
+.delete-dialog-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.delete-dialog-list {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
 }
 
 .delete-dialog-actions {
@@ -264,7 +412,7 @@
   border-radius: var(--radius-lg);
   font-size: 15px;
   font-weight: 600;
-  color: var(--color-text-subtle);
+  color: var(--color-text-muted);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: filter var(--duration);

@@ -2,8 +2,6 @@
 
 .app-layout {
   min-height: 100dvh;
-  /* leave room for nav bar + FAB overflow + safe area */
-  padding-bottom: calc(80px + env(safe-area-inset-bottom));
   background: var(--color-surface-app);
 }
 
