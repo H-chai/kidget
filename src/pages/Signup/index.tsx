@@ -40,13 +40,24 @@ export const SignupPage = () => {
     return (
       <div className="auth-page">
         <div className="auth-mascots">
-          <img src={trioLeft} alt="" className="auth-mascot auth-mascot--side" />
-          <img src={trioCenter} alt="" className="auth-mascot auth-mascot--center" />
-          <img src={trioRight} alt="" className="auth-mascot auth-mascot--side" />
+          <img
+            src={trioLeft}
+            alt=""
+            className="auth-mascot auth-mascot--side"
+          />
+          <img
+            src={trioCenter}
+            alt=""
+            className="auth-mascot auth-mascot--center"
+          />
+          <img
+            src={trioRight}
+            alt=""
+            className="auth-mascot auth-mascot--side"
+          />
         </div>
         <div className="auth-card">
           <div className="auth-header">
-            <div className="auth-logo">📬</div>
             <h1 className="auth-title">{t("auth.checkEmailTitle")}</h1>
           </div>
           <p className="auth-success">{t("auth.checkEmailBody", { email })}</p>
@@ -64,7 +75,11 @@ export const SignupPage = () => {
     <div className="auth-page">
       <div className="auth-mascots">
         <img src={trioLeft} alt="" className="auth-mascot auth-mascot--side" />
-        <img src={trioCenter} alt="" className="auth-mascot auth-mascot--center" />
+        <img
+          src={trioCenter}
+          alt=""
+          className="auth-mascot auth-mascot--center"
+        />
         <img src={trioRight} alt="" className="auth-mascot auth-mascot--side" />
       </div>
       <div className="auth-card">
