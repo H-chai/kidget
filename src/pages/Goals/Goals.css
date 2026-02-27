@@ -68,7 +68,8 @@
 }
 
 .goals-add-btn--cancel {
-  background: var(--color-surface-hover);
+  background: var(--color-surface-card);
+  border: 1.5px solid var(--color-border);
   color: var(--color-text-muted);
 }
 
