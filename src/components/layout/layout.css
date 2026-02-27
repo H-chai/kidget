@@ -115,10 +115,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.nav-fab--active {
-  filter: brightness(0.88);
-}
-
 .nav-fab:active {
   transform: scale(0.94);
 }
