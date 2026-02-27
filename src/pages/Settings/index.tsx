@@ -25,7 +25,6 @@ export const SettingsPage = () => {
   const [name, setName] = useState(profile?.name ?? "");
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [deleting, setDeleting] = useState(false);
-
   const handleSave = async (e: { preventDefault(): void }) => {
     e.preventDefault();
     if (!name.trim()) return;

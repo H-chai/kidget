@@ -66,7 +66,8 @@ const LEVEL_ICONS: Record<number, ComponentType<{ size?: number }>> = {
 };
 
 export const BadgesPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isJa = i18n.language === "ja";
   const { user } = useAuth();
   const { profile } = useProfile();
 
@@ -181,7 +182,7 @@ export const BadgesPage = () => {
         {earnedBadges.length > 0 && (
           <div className="badges-section">
             <p className="badges-section-title">{t("badges.earnedSection")}</p>
-            <div className="badge-grid">
+            <div className={`badge-grid${isJa ? " badge-grid--ja" : ""}`}>
               {earnedBadges.map((badge) => (
                 <div key={badge.id} className="badge-card">
                   <BadgeEmoji badge={badge} animating={badge.id === animatingId} />
@@ -199,7 +200,7 @@ export const BadgesPage = () => {
             <p className="badges-section-title">
               {t("badges.unearnedSection")}
             </p>
-            <div className="badge-grid">
+            <div className={`badge-grid${isJa ? " badge-grid--ja" : ""}`}>
               {unearnedBadges.map((badge) => (
                 <div key={badge.id} className="badge-card badge-card--unearned">
                   <BadgeEmoji badge={badge} />

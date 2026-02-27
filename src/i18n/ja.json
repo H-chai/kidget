@@ -1,0 +1,208 @@
+{
+  "nav": {
+    "overview": "ホーム",
+    "history": "きろく",
+    "badges": "バッジ",
+    "goals": "もくひょう"
+  },
+  "overview": {
+    "greeting": "{{name}}、こんにちは！",
+    "balance": "ざんだか",
+    "recentTransactions": "さいきんのきろく",
+    "noTransactions": "まだきろくがありません",
+    "levelProgress": "レベルのすすみぐあい",
+    "choresToLevelUp": "レベルアップまであと{{count}}かい",
+    "maxLevel": "さいこうレベルたっせい！",
+    "activeGoal": "ためてるもの：",
+    "moreToGo": "あと{{amount}}！",
+    "moreToGoLabel": "もうすこし！",
+    "seeAllGoals": "もくひょうをぜんぶみる →",
+    "seeAllHistory": "きろくをぜんぶみる →",
+    "noGoals": "もくひょうがありません — つくってみよう！",
+    "goalReached": "もくひょうたっせい！🎉"
+  },
+  "history": {
+    "title": "きろく",
+    "balance": "ざんだか",
+    "noTransactions": "まだきろくがありません",
+    "income": "もらった",
+    "expense": "つかった",
+    "deleteConfirm": "けしますか？"
+  },
+  "addTransaction": {
+    "title": "きろくをついか",
+    "income": "おてつだい",
+    "expense": "つかった",
+    "description": "ないよう",
+    "descriptionPlaceholderIncome": "どんなおてつだいをしましたか？",
+    "descriptionPlaceholderExpense": "なにに つかいましたか？",
+    "amount": "きんがく",
+    "date": "ひにち",
+    "submit": "ほぞん",
+    "cancel": "キャンセル",
+    "invalidAmount": "ただしいきんがくをいれてください",
+    "icon": "アイコン"
+  },
+  "badges": {
+    "title": "バッジ & レベル",
+    "level": "レベル {{level}}",
+    "choresToNextLevel": "レベルアップまであと{{count}}かい",
+    "maxLevel": "さいこうレベルたっせい！",
+    "earnedSection": "もってるバッジ",
+    "unearnedSection": "がんばろう！"
+  },
+  "goals": {
+    "title": "もくひょう",
+    "noGoals": "もくひょうがありません — つくってみよう！",
+    "addGoal": "もくひょうをついか",
+    "editGoal": "もくひょうをへんこう",
+    "targetAmount": "もくひょうのきんがく",
+    "goalName": "もくひょうのなまえ",
+    "goalNamePlaceholder": "なにをかうためにためますか？",
+    "progress": "{{current}} / {{target}}",
+    "achieved": "たっせい！",
+    "markAchieved": "たっせいにする",
+    "save": "ほぞん",
+    "cancel": "キャンセル",
+    "delete": "けす"
+  },
+  "onboarding": {
+    "title": "Kidgetへようこそ！",
+    "subtitle": "プロフィールをせっていしよう",
+    "avatarLabel": "いろをえらんでね",
+    "nameLabel": "なまえ",
+    "namePlaceholder": "れい：たろう",
+    "submit": "はじめよう！",
+    "saving": "ほぞんちゅう..."
+  },
+  "settings": {
+    "title": "せってい",
+    "profileSection": "プロフィール",
+    "avatarLabel": "マスコットのいろ",
+    "nameLabel": "なまえ",
+    "namePlaceholder": "あなたのなまえ",
+    "save": "へんこうをほぞん",
+    "saving": "ほぞんちゅう...",
+    "saved": "ほぞんしました！",
+    "signOut": "ログアウト",
+    "deleteAccount": "アカウントをけす",
+    "deleteAccountTitle": "アカウントをけしますか？",
+    "deleteAccountConfirm": "ほんとうにアカウントをけしますか？",
+    "deleteAccountSubtitle": "つぎのデータがぜんぶきえます：",
+    "deleteAccountItem1": "プロフィール",
+    "deleteAccountItem2": "おてつだい・つかったきろく",
+    "deleteAccountItem3": "もくひょう",
+    "deleteAccountItem4": "バッジ",
+    "language": "ことば"
+  },
+  "auth": {
+    "loginTitle": "Kidgetへようこそ",
+    "loginSubtitle": "ログインしてつづける",
+    "signupTitle": "アカウントをつくる",
+    "signupSubtitle": "お子さまのKidgetをせっていします",
+    "checkEmailTitle": "メールをかくにんしてください",
+    "checkEmailBody": "{{email}}にかくにんリンクをおくりました。クリックしてアカウントをゆうこうにしてください。",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "passwordHint": "6もじいじょう",
+    "login": "ログイン",
+    "signup": "サインアップ",
+    "loggingIn": "ログインちゅう...",
+    "signingUp": "とうろくちゅう...",
+    "noAccount": "アカウントをもっていないですか？",
+    "haveAccount": "すでにアカウントをもっていますか？",
+    "signupLink": "サインアップ",
+    "loginLink": "ログイン",
+    "forgotPassword": "パスワードをわすれましたか？",
+    "forgotPasswordTitle": "パスワードをわすれましたか？",
+    "forgotPasswordSubtitle": "メールアドレスをいれるとリセットリンクをおくります",
+    "sendResetLink": "リセットリンクをおくる",
+    "sendingResetLink": "おくりちゅう...",
+    "resetLinkSentTitle": "メールをかくにんしてください",
+    "resetLinkSentBody": "{{email}}にパスワードリセットリンクをおくりました。",
+    "backToLogin": "ログインにもどる",
+    "resetPasswordTitle": "あたらしいパスワードをせってい",
+    "resetPasswordSubtitle": "あたらしいパスワードをいれてください",
+    "newPassword": "あたらしいパスワード",
+    "setPassword": "パスワードをせってい",
+    "settingPassword": "ほぞんちゅう...",
+    "errorInvalidCredentials": "メールアドレスかパスワードがまちがっています。",
+    "errorDefault": "エラーがはっせいしました。もういちどためしてください。"
+  },
+  "common": {
+    "save": "ほぞん",
+    "cancel": "キャンセル",
+    "delete": "けす",
+    "edit": "へんこう",
+    "loading": "よみこみちゅう...",
+    "error": "エラーがはっせいしました",
+    "currency": "{{amount}}えん",
+    "currencySymbol": "¥"
+  },
+  "badge": {
+    "first_chore": {
+      "name": "はじめの一歩",
+      "description": "はじめてのおてつだいをかんりょう"
+    },
+    "chore_5": {
+      "name": "おてつだいしんじん",
+      "description": "おてつだい5かいたっせい"
+    },
+    "chore_15": {
+      "name": "がんばりや",
+      "description": "おてつだい15かいたっせい"
+    },
+    "chore_50": {
+      "name": "おてつだいヒーロー",
+      "description": "おてつだい50かいたっせい"
+    },
+    "chore_100": {
+      "name": "レジェンド",
+      "description": "おてつだい100かいたっせい"
+    },
+    "chore_streak_7": {
+      "name": "もえてる！",
+      "description": "7にちれんぞくでおてつだい"
+    },
+    "two_week_streak": {
+      "name": "ホットストリーク",
+      "description": "14にちれんぞくでおてつだい"
+    },
+    "monthly_habit": {
+      "name": "しゅうかんマスター",
+      "description": "30にちれんぞくでおてつだい"
+    },
+    "first_goal": {
+      "name": "もくひょうせってい！",
+      "description": "はじめてのちょきんもくひょうをさくせい"
+    },
+    "goal_achieved": {
+      "name": "もくひょうたっせい！",
+      "description": "はじめてのちょきんもくひょうをたっせい"
+    },
+    "second_goal_achieved": {
+      "name": "にかんたっせい",
+      "description": "2つめのちょきんもくひょうをたっせい"
+    },
+    "goal_getter": {
+      "name": "もくひょうコレクター",
+      "description": "ちょきんもくひょうを3つたっせい"
+    },
+    "patient_saver": {
+      "name": "コツコツちょきん",
+      "description": "30にちいじょうかけてもくひょうたっせい"
+    },
+    "first_expense": {
+      "name": "はじめてのおかいもの",
+      "description": "はじめてのしゅっぴをきろく"
+    },
+    "saver_month": {
+      "name": "せつやくめいじん",
+      "description": "まるまる1かげつしゅっぴゼロ"
+    },
+    "no_expense_2months": {
+      "name": "てつのせつやくか",
+      "description": "2かげつしゅっぴゼロ"
+    }
+  }
+}

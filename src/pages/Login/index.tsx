@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../../context/AuthContext";
+import { LangSelector } from "../../components/ui/LangSelector";
 import trioLeft from "../../assets/mascots/trio/trio-left.svg";
 import trioCenter from "../../assets/mascots/trio/trio-center.svg";
 import trioRight from "../../assets/mascots/trio/trio-right.svg";
@@ -36,6 +37,7 @@ export const LoginPage = () => {
 
   return (
     <div className="auth-page">
+      <LangSelector />
       <div className="auth-mascots">
         <img src={trioLeft} alt="" className="auth-mascot auth-mascot--side" />
         <img src={trioCenter} alt="" className="auth-mascot auth-mascot--center" />

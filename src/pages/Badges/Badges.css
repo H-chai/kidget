@@ -101,6 +101,10 @@
   gap: 10px;
 }
 
+.badge-grid--ja {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 /* ===== Badge card ===== */
 
 .badge-card {
