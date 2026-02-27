@@ -26,7 +26,7 @@
 
   /* ===== Expense / Danger ===== */
   --color-expense: #f41d1d;
-  --color-expense-dark: #cc1515;
+  --color-expense-dark: #0e0202;
   --color-expense-bg: #ffe4e4;
   --color-danger: #f41d1d;
   --color-danger-bg: #fff0f0;
@@ -44,6 +44,7 @@
   --color-surface-hover: #f3f4f6;
   --color-history-bg: #a2e0ff;
   --color-badges-bg: #ffc7df;
+  --color-goals-bg: #fff6b5;
 
   /* ===== Border ===== */
   --color-border: #e5e7eb;
@@ -102,8 +103,13 @@ a {
 /* ===== Shared page heading with sway mascot ===== */
 
 @keyframes page-heading-sway {
-  0%, 100% { transform: rotate(-6deg); }
-  50%       { transform: rotate(6deg); }
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
 }
 
 .page-heading {

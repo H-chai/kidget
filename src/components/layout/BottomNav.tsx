@@ -17,12 +17,16 @@ export const BottomNav = () => {
   const { profile } = useProfile();
   const location = useLocation();
   const userColor = profile?.avatar_emoji ?? "var(--color-primary)";
-  const navBg = ["/history", "/badges"].includes(location.pathname) ? "var(--color-surface-app)" : undefined;
+  const navBg = ["/history", "/badges", "/goals"].includes(location.pathname)
+    ? "var(--color-surface-app)"
+    : undefined;
 
   return (
     <nav
       className="bottom-nav"
-      style={{ "--user-color": userColor, background: navBg } as React.CSSProperties}
+      style={
+        { "--user-color": userColor, background: navBg } as React.CSSProperties
+      }
     >
       <div className="bottom-nav-inner">
         <NavLink to="/" end className={navItemClass}>

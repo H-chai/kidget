@@ -1,10 +1,17 @@
 /* ===== Page ===== */
 
 .goals-page {
-  padding: 20px 16px;
+  padding: 32px 16px 96px;
+  min-height: 100vh;
+  background: var(--color-goals-bg);
+}
+
+.goals-page-inner {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
+  max-width: 768px;
+  margin: 0 auto;
 }
 
 /* ===== Header ===== */
@@ -174,7 +181,6 @@
 
 .goal-card {
   background: var(--color-surface-card);
-  border: 1.5px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: 16px;
   display: flex;
@@ -183,8 +189,7 @@
 }
 
 .goal-card--achieved {
-  background: var(--color-income-surface);
-  border-color: var(--color-income-border);
+  background: var(--color-surface-app);
 }
 
 .goal-card-header {
@@ -197,6 +202,7 @@
 .goal-name {
   font-size: 16px;
   font-weight: 600;
+  font-family: var(--font-display);
   color: var(--color-text);
   flex: 1;
 }
@@ -222,14 +228,14 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--color-text-muted);
 }
 
 .goal-achieved-badge {
-  background: var(--color-income-bg);
-  color: var(--color-income-dark);
-  font-size: 11px;
+  background: var(--color-goals-bg);
+  color: var(--color-text);
+  font-size: 12px;
   font-weight: 700;
   padding: 2px 8px;
   border-radius: var(--radius-2xl);
