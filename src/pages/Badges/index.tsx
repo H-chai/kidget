@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../../context/AuthContext";
 import { useProfile } from "../../context/ProfileContext";
@@ -18,12 +18,18 @@ import type { BadgeDefinition } from "../../types";
 import { ProgressBar } from "../../components/ui/ProgressBar";
 import "./Badges.css";
 
-const BadgeEmoji = ({ badge }: { badge: BadgeDefinition }) => {
+const BadgeEmoji = ({
+  badge,
+  animating,
+}: {
+  badge: BadgeDefinition;
+  animating?: boolean;
+}) => {
   const Icon = badge.emoji;
   const count = badge.count ?? 1;
   return (
     <span
-      className="badge-emoji"
+      className={`badge-emoji${animating ? " badge-emoji--animating" : ""}`}
       style={{ color: badge.color, display: "flex", gap: 2 }}
     >
       {Array.from({ length: count }, (_, i) => (
@@ -89,6 +95,31 @@ export const BadgesPage = () => {
   const earnedBadges = BADGE_DEFINITIONS.filter((b) => earnedIds.has(b.id));
   const unearnedBadges = BADGE_DEFINITIONS.filter((b) => !earnedIds.has(b.id));
 
+  // Randomly animate a badge from the earned list
+  const [animatingId, setAnimatingId] = useState<string | null>(null);
+  const earnedBadgesRef = useRef(earnedBadges);
+  useEffect(() => { earnedBadgesRef.current = earnedBadges; });
+  useEffect(() => {
+    if (earnedBadges.length === 0) return;
+    let cancelled = false;
+    const run = async () => {
+      while (!cancelled) {
+        await new Promise<void>((r) =>
+          setTimeout(r, 1500 + Math.random() * 2500)
+        );
+        if (cancelled) break;
+        const list = earnedBadgesRef.current;
+        const badge = list[Math.floor(Math.random() * list.length)];
+        setAnimatingId(badge.id);
+        await new Promise<void>((r) => setTimeout(r, 750));
+        if (cancelled) break;
+        setAnimatingId(null);
+      }
+    };
+    run();
+    return () => { cancelled = true; };
+  }, [earnedBadges.length]);
+
   return (
     <div className="badges-page">
       <div className="badges-page-inner">
@@ -123,7 +154,7 @@ export const BadgesPage = () => {
             <div className="badge-grid">
               {earnedBadges.map((badge) => (
                 <div key={badge.id} className="badge-card">
-                  <BadgeEmoji badge={badge} />
+                  <BadgeEmoji badge={badge} animating={badge.id === animatingId} />
                   <span className="badge-name">{t(badge.nameKey)}</span>
                   <span className="badge-desc">{t(badge.descriptionKey)}</span>
                 </div>

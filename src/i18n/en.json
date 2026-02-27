@@ -142,15 +142,15 @@
       "description": "Completed your first chore"
     },
     "chore_5": {
-      "name": "Complete 5 Chores",
+      "name": "Chore Rookie",
       "description": "Completed 5 chores"
     },
     "chore_15": {
-      "name": "Complete 15 Chores",
+      "name": "Hard Worker",
       "description": "Completed 15 chores"
     },
     "chore_50": {
-      "name": "Complete 50 Chores",
+      "name": "Chore Hero",
       "description": "Completed 50 chores"
     },
     "chore_100": {
@@ -162,7 +162,7 @@
       "description": "Completed chores 7 days in a row"
     },
     "two_week_streak": {
-      "name": "Two Week Streak",
+      "name": "Hot Streak",
       "description": "Completed chores 14 days in a row"
     },
     "monthly_habit": {
@@ -178,7 +178,7 @@
       "description": "Achieved your first savings goal"
     },
     "second_goal_achieved": {
-      "name": "Second Goal Achieved",
+      "name": "Goal Duo",
       "description": "Achieved your second savings goal"
     },
     "goal_getter": {
@@ -198,7 +198,7 @@
       "description": "Spent nothing in a whole month"
     },
     "no_expense_2months": {
-      "name": "No Spending for 2 Months",
+      "name": "Iron Saver",
       "description": "Spent nothing for 2 whole months"
     }
   }

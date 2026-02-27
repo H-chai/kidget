@@ -112,6 +112,15 @@
   margin-bottom: 4px;
 }
 
+@keyframes badge-flip {
+  0%   { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.badge-emoji--animating {
+  animation: badge-flip 0.7s ease-in-out;
+}
+
 .badge-name {
   font-size: 12px;
   font-weight: 700;

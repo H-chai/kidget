@@ -1,6 +1,7 @@
 import type { BadgeDefinition } from '../types';
 import { TiStarFullOutline } from 'react-icons/ti';
-import { BsTrophyFill, BsFire } from 'react-icons/bs';
+import { BsFire } from 'react-icons/bs';
+import { IoMdTrophy } from 'react-icons/io';
 import { FaMedal, FaCalendarAlt } from 'react-icons/fa';
 import { GoGoal } from 'react-icons/go';
 import { LuPartyPopper } from 'react-icons/lu';
@@ -19,7 +20,7 @@ export const BADGE_DEFINITIONS: BadgeDefinition[] = [
   },
   {
     id: 'chore_5',
-    emoji: BsTrophyFill,
+    emoji: IoMdTrophy,
     color: '#dcac00',
     count: 1,
     nameKey: 'badge.chore_5.name',
@@ -27,7 +28,7 @@ export const BADGE_DEFINITIONS: BadgeDefinition[] = [
   },
   {
     id: 'chore_15',
-    emoji: BsTrophyFill,
+    emoji: IoMdTrophy,
     color: '#dcac00',
     count: 2,
     nameKey: 'badge.chore_15.name',
@@ -35,7 +36,7 @@ export const BADGE_DEFINITIONS: BadgeDefinition[] = [
   },
   {
     id: 'chore_50',
-    emoji: BsTrophyFill,
+    emoji: IoMdTrophy,
     color: '#dcac00',
     count: 3,
     nameKey: 'badge.chore_50.name',
