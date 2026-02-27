@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { TiStarFullOutline } from "react-icons/ti";
+import { FaMoneyBill1Wave } from "react-icons/fa6";
 import { useAuth } from "../../context/AuthContext";
 import { useProfile } from "../../context/ProfileContext";
 import { MascotFace } from "../../components/ui/MascotFace";
@@ -89,14 +91,24 @@ export const AddTransactionPage = () => {
             className={`type-btn${isIncome ? " type-btn--active-income" : ""}`}
             onClick={() => setType("income")}
           >
-            ⭐ {t("addTransaction.income")}
+            <TiStarFullOutline
+              size={18}
+              color="#ffc800"
+              style={{ marginRight: 4 }}
+            />
+            {t("addTransaction.income")}
           </button>
           <button
             type="button"
             className={`type-btn${!isIncome ? " type-btn--active-expense" : ""}`}
             onClick={() => setType("expense")}
           >
-            💸 {t("addTransaction.expense")}
+            <FaMoneyBill1Wave
+              size={16}
+              color="#1EB400"
+              style={{ marginRight: 4 }}
+            />{" "}
+            {t("addTransaction.expense")}
           </button>
         </div>
 

@@ -12,6 +12,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { ImSpoonKnife } from "react-icons/im";
 import { GiVacuumCleaner } from "react-icons/gi";
 import { RiPlantLine } from "react-icons/ri";
+import { TbPigMoney } from "react-icons/tb";
 
 export type TransactionIconDef = {
   id: string;
@@ -68,6 +69,7 @@ export const TRANSACTION_ICONS: TransactionIconDef[] = [
     bg: "#0D9488",
     color: "#ffffff",
   },
+  { id: "pigmoney", Component: TbPigMoney, bg: "#ff67a8", color: "#ffffff" },
 ];
 
 export const getIconDef = (
