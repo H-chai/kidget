@@ -26,7 +26,8 @@ export const LoginPage = () => {
     setSubmitting(true);
     const { error } = await signIn(email, password);
     if (error) {
-      setError(error);
+      const isInvalidCredentials = error.toLowerCase().includes("invalid login credentials");
+      setError(t(isInvalidCredentials ? "auth.errorInvalidCredentials" : "auth.errorDefault"));
       setSubmitting(false);
     } else {
       navigate("/", { replace: true });
