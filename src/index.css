@@ -63,7 +63,7 @@
   --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
   --shadow-card-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
   --shadow-nav: 0 -2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-fab: 0 4px 16px rgba(60, 135, 213, 0.45);
+  --shadow-fab: 0 4px 14px rgba(0, 0, 0, 0.12);
   --shadow-modal: 0 4px 24px rgba(0, 0, 0, 0.08);
 
   /* ===== Transitions ===== */
