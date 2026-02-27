@@ -1,3 +1,5 @@
+import type { ComponentType } from 'react';
+
 export type TransactionType = 'income' | 'expense';
 
 export type Transaction = {
@@ -36,7 +38,9 @@ export type Profile = {
 /** Badge definition — stored as constant, not in DB */
 export type BadgeDefinition = {
   id: string;
-  emoji: string;
+  emoji: ComponentType<{ size?: number; className?: string }>;
+  color: string;
+  count?: number; // number of icons to show side by side, default 1
   nameKey: string; // i18n key
   descriptionKey: string; // i18n key
 };

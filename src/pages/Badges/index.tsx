@@ -14,8 +14,24 @@ import {
   levelProgressPercent,
 } from "../../utils/level";
 import { BADGE_DEFINITIONS } from "../../constants";
+import type { BadgeDefinition } from "../../types";
 import { ProgressBar } from "../../components/ui/ProgressBar";
 import "./Badges.css";
+
+const BadgeEmoji = ({ badge }: { badge: BadgeDefinition }) => {
+  const Icon = badge.emoji;
+  const count = badge.count ?? 1;
+  return (
+    <span
+      className="badge-emoji"
+      style={{ color: badge.color, display: "flex", gap: 2 }}
+    >
+      {Array.from({ length: count }, (_, i) => (
+        <Icon key={i} size={24} />
+      ))}
+    </span>
+  );
+};
 
 const LEVEL_EMOJI: Record<number, string> = {
   1: "🌱",
@@ -107,7 +123,7 @@ export const BadgesPage = () => {
             <div className="badge-grid">
               {earnedBadges.map((badge) => (
                 <div key={badge.id} className="badge-card">
-                  <span className="badge-emoji">{badge.emoji}</span>
+                  <BadgeEmoji badge={badge} />
                   <span className="badge-name">{t(badge.nameKey)}</span>
                   <span className="badge-desc">{t(badge.descriptionKey)}</span>
                 </div>
@@ -125,7 +141,7 @@ export const BadgesPage = () => {
             <div className="badge-grid">
               {unearnedBadges.map((badge) => (
                 <div key={badge.id} className="badge-card badge-card--unearned">
-                  <span className="badge-emoji">{badge.emoji}</span>
+                  <BadgeEmoji badge={badge} />
                   <span className="badge-name">{t(badge.nameKey)}</span>
                   <span className="badge-desc">{t(badge.descriptionKey)}</span>
                 </div>

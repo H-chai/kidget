@@ -141,13 +141,33 @@
       "name": "First Chore",
       "description": "Completed your first chore"
     },
-    "chore_10": {
-      "name": "Chore Master",
-      "description": "Completed 10 chores"
+    "chore_5": {
+      "name": "Complete 5 Chores",
+      "description": "Completed 5 chores"
+    },
+    "chore_15": {
+      "name": "Complete 15 Chores",
+      "description": "Completed 15 chores"
+    },
+    "chore_50": {
+      "name": "Complete 50 Chores",
+      "description": "Completed 50 chores"
+    },
+    "chore_100": {
+      "name": "Century Club",
+      "description": "Completed 100 chores"
     },
     "chore_streak_7": {
       "name": "On Fire",
       "description": "Completed chores 7 days in a row"
+    },
+    "two_week_streak": {
+      "name": "Two Week Streak",
+      "description": "Completed chores 14 days in a row"
+    },
+    "monthly_habit": {
+      "name": "Monthly Habit",
+      "description": "Completed chores 30 days in a row"
     },
     "first_goal": {
       "name": "Goal Setter",
@@ -157,6 +177,18 @@
       "name": "Goal Crusher",
       "description": "Achieved your first savings goal"
     },
+    "second_goal_achieved": {
+      "name": "Second Goal Achieved",
+      "description": "Achieved your second savings goal"
+    },
+    "goal_getter": {
+      "name": "Goal Getter",
+      "description": "Achieved 3 savings goals"
+    },
+    "patient_saver": {
+      "name": "Patient Saver",
+      "description": "Reached a goal that took over 30 days"
+    },
     "first_expense": {
       "name": "Spender",
       "description": "Recorded your first expense"
@@ -164,6 +196,10 @@
     "saver_month": {
       "name": "Super Saver",
       "description": "Spent nothing in a whole month"
+    },
+    "no_expense_2months": {
+      "name": "No Spending for 2 Months",
+      "description": "Spent nothing for 2 whole months"
     }
   }
 }
