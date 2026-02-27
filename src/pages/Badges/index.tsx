@@ -1,5 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ComponentType } from "react";
 import { useTranslation } from "react-i18next";
+import {
+  TbHexagonNumber1Filled,
+  TbHexagonNumber2Filled,
+  TbHexagonNumber3Filled,
+  TbHexagonNumber4Filled,
+  TbHexagonNumber5Filled,
+  TbHexagonNumber6Filled,
+  TbHexagonNumber7Filled,
+  TbHexagonNumber8Filled,
+  TbHexagonNumber9Filled,
+  TbMedal2,
+} from "react-icons/tb";
 import { useAuth } from "../../context/AuthContext";
 import { useProfile } from "../../context/ProfileContext";
 import { MascotFace } from "../../components/ui/MascotFace";
@@ -39,12 +51,17 @@ const BadgeEmoji = ({
   );
 };
 
-const LEVEL_EMOJI: Record<number, string> = {
-  1: "🌱",
-  2: "⭐",
-  3: "🏅",
-  4: "🥇",
-  5: "🏆",
+const LEVEL_ICONS: Record<number, ComponentType<{ size?: number }>> = {
+  1:  TbHexagonNumber1Filled,
+  2:  TbHexagonNumber2Filled,
+  3:  TbHexagonNumber3Filled,
+  4:  TbHexagonNumber4Filled,
+  5:  TbHexagonNumber5Filled,
+  6:  TbHexagonNumber6Filled,
+  7:  TbHexagonNumber7Filled,
+  8:  TbHexagonNumber8Filled,
+  9:  TbHexagonNumber9Filled,
+  10: TbMedal2,
 };
 
 export const BadgesPage = () => {
@@ -64,6 +81,7 @@ export const BadgesPage = () => {
   const level = calculateLevel(choreCount);
   const toNext = choresToNextLevel(choreCount);
   const progressPct = levelProgressPercent(choreCount);
+  const LevelIcon = LEVEL_ICONS[level];
 
   // Award any newly earned badges
   useEffect(() => {
@@ -122,6 +140,15 @@ export const BadgesPage = () => {
 
   return (
     <div className="badges-page">
+      {/* SVG gradient definition for level icon */}
+      <svg width="0" height="0" style={{ position: "absolute" }}>
+        <defs>
+          <linearGradient id="level-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#F18334" />
+            <stop offset="100%" stopColor="#FADA66" />
+          </linearGradient>
+        </defs>
+      </svg>
       <div className="badges-page-inner">
         <div className="page-heading">
           <MascotFace
@@ -136,7 +163,7 @@ export const BadgesPage = () => {
         {/* Level card */}
         <div className="level-card">
           <div className="level-top-row">
-            <span className="level-icon">{LEVEL_EMOJI[level]}</span>
+            <span className="level-icon"><LevelIcon size={38} /></span>
             <span className="level-label">{t("badges.level", { level })}</span>
           </div>
           <ProgressBar value={progressPct} color="var(--color-accent)" />

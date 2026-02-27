@@ -41,8 +41,22 @@
 }
 
 .level-icon {
-  font-size: 38px;
   line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes level-spin {
+  0%    { transform: rotateY(0deg); }
+  4.6%  { transform: rotateY(40deg); }
+  13.7% { transform: rotateY(680deg); }
+  18.3% { transform: rotateY(720deg); }
+  100%  { transform: rotateY(720deg); }
+}
+
+.level-icon svg {
+  fill: url(#level-grad);
+  animation: level-spin 6s linear infinite;
 }
 
 .level-label {
