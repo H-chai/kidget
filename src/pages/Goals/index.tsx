@@ -8,6 +8,7 @@ import { useGoals } from '../../hooks/useGoals';
 import { useTransactions } from '../../hooks/useTransactions';
 import { calculateBalance } from '../../utils/balance';
 import { ProgressBar } from '../../components/ui/ProgressBar';
+import { LoadingScreen } from '../../components/layout/LoadingScreen';
 import type { Goal } from '../../types';
 import './Goals.css';
 
@@ -24,6 +25,8 @@ export const GoalsPage = () => {
   const [targetAmount, setTargetAmount] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
+
+  if (loading) return <LoadingScreen />;
 
   const openForm = () => { setShowForm(true); setFormError(null); };
   const closeForm = () => { setShowForm(false); setTitle(''); setTargetAmount(''); setFormError(null); };

@@ -28,6 +28,7 @@ import {
 import { BADGE_DEFINITIONS } from "../../constants";
 import type { BadgeDefinition } from "../../types";
 import { ProgressBar } from "../../components/ui/ProgressBar";
+import { LoadingScreen } from "../../components/layout/LoadingScreen";
 import "./Badges.css";
 
 const BadgeEmoji = ({
@@ -137,6 +138,8 @@ export const BadgesPage = () => {
     run();
     return () => { cancelled = true; };
   }, [earnedBadges.length]);
+
+  if (txLoading || goalsLoading || badgesLoading) return <LoadingScreen />;
 
   return (
     <div className="badges-page">
