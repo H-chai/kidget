@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { IoIosCheckmarkCircle } from "react-icons/io";
 import { useAuth } from "../../context/AuthContext";
 import { useProfile } from "../../context/ProfileContext";
+import facePlainBlue from "../../assets/mascots/face/face-plain-blue.svg";
+import facePlainGreen from "../../assets/mascots/face/face-plain-green.svg";
+import facePlainOrange from "../../assets/mascots/face/face-plain-orange.svg";
+import facePlainPink from "../../assets/mascots/face/face-plain-pink.svg";
+import facePlainPurple from "../../assets/mascots/face/face-plain-purple.svg";
 import { MascotFace } from "../../components/ui/MascotFace";
 import { supabase } from "../../lib/supabase";
 import { useGoals } from "../../hooks/useGoals";
@@ -11,6 +17,89 @@ import { ProgressBar } from "../../components/ui/ProgressBar";
 import { LoadingScreen } from "../../components/layout/LoadingScreen";
 import type { Goal } from "../../types";
 import "./Goals.css";
+
+const BG_FACES = [
+  {
+    src: facePlainBlue,
+    top: "4%",
+    left: "36%",
+    size: 52,
+    rotate: -18,
+    opacity: 0.28,
+  },
+  {
+    src: facePlainPink,
+    top: "2%",
+    left: "72%",
+    size: 38,
+    rotate: 12,
+    opacity: 0.25,
+  },
+  {
+    src: facePlainGreen,
+    top: "18%",
+    left: "88%",
+    size: 96,
+    rotate: -8,
+    opacity: 0.24,
+  },
+  {
+    src: facePlainOrange,
+    top: "34%",
+    left: "0%",
+    size: 120,
+    rotate: 20,
+    opacity: 0.26,
+  },
+  {
+    src: facePlainPurple,
+    top: "50%",
+    left: "82%",
+    size: 56,
+    rotate: -22,
+    opacity: 0.23,
+  },
+  {
+    src: facePlainBlue,
+    top: "62%",
+    left: "10%",
+    size: 36,
+    rotate: 15,
+    opacity: 0.22,
+  },
+  {
+    src: facePlainPink,
+    top: "74%",
+    left: "60%",
+    size: 100,
+    rotate: -10,
+    opacity: 0.25,
+  },
+  {
+    src: facePlainGreen,
+    top: "84%",
+    left: "30%",
+    size: 82,
+    rotate: 25,
+    opacity: 0.23,
+  },
+  {
+    src: facePlainOrange,
+    top: "88%",
+    left: "78%",
+    size: 54,
+    rotate: -30,
+    opacity: 0.24,
+  },
+  {
+    src: facePlainPurple,
+    top: "44%",
+    left: "46%",
+    size: 30,
+    rotate: 18,
+    opacity: 0.2,
+  },
+];
 
 export const GoalsPage = () => {
   const { t } = useTranslation();
@@ -76,6 +165,25 @@ export const GoalsPage = () => {
 
   return (
     <div className="goals-page">
+      <div className="goals-bg-mascots" aria-hidden="true">
+        {BG_FACES.map((f, i) => (
+          <img
+            key={i}
+            src={f.src}
+            alt=""
+            style={{
+              position: "absolute",
+              top: f.top,
+              left: f.left,
+              width: f.size,
+              height: f.size,
+              opacity: f.opacity,
+              transform: `rotate(${f.rotate}deg)`,
+              userSelect: "none",
+            }}
+          />
+        ))}
+      </div>
       <div className="goals-page-inner">
         {/* Header */}
         <div className="goals-header">
@@ -161,62 +269,70 @@ export const GoalsPage = () => {
         )}
 
         <ul className="goals-list">
-          {goals.map((goal) => {
-            const isAchieved = !!goal.achieved_at;
-            const percent = Math.min(
-              100,
-              Math.max(0, (balance / goal.target_amount) * 100),
-            );
+          {[...goals]
+            .sort((a, b) => (a.achieved_at ? 1 : 0) - (b.achieved_at ? 1 : 0))
+            .map((goal) => {
+              const isAchieved = !!goal.achieved_at;
+              const percent = Math.min(
+                100,
+                Math.max(0, (balance / goal.target_amount) * 100),
+              );
 
-            return (
-              <li
-                key={goal.id}
-                className={`goal-card${isAchieved ? " goal-card--achieved" : ""}`}
-              >
-                <div className="goal-card-header">
-                  <span className="goal-name">
-                    {isAchieved ? "✅ " : ""}
-                    {goal.title}
-                  </span>
-                  <button
-                    type="button"
-                    className="goal-delete-btn"
-                    onClick={() => handleDelete(goal)}
-                    aria-label={t("goals.delete")}
-                  >
-                    ✕
-                  </button>
-                </div>
-
-                <ProgressBar
-                  value={percent}
-                  color={isAchieved ? "#fada66" : "#ffe792"}
-                />
-
-                <div className="goal-progress-label">
-                  {t("goals.progress", {
-                    current: balance.toLocaleString(),
-                    target: goal.target_amount.toLocaleString(),
-                  })}
-                  {isAchieved && (
-                    <span className="goal-achieved-badge">
-                      {t("goals.achieved")}
+              return (
+                <li
+                  key={goal.id}
+                  className={`goal-card${isAchieved ? " goal-card--achieved" : ""}`}
+                >
+                  <div className="goal-card-header">
+                    <span className="goal-name">
+                      {isAchieved && (
+                        <IoIosCheckmarkCircle
+                          size={20}
+                          color="var(--color-primary)"
+                          style={{ marginRight: 4, flexShrink: 0 }}
+                        />
+                      )}
+                      {goal.title}
                     </span>
-                  )}
-                </div>
+                    <button
+                      type="button"
+                      className="goal-delete-btn"
+                      onClick={() => handleDelete(goal)}
+                      aria-label={t("goals.delete")}
+                    >
+                      ✕
+                    </button>
+                  </div>
 
-                {!isAchieved && percent >= 100 && (
-                  <button
-                    type="button"
-                    className="goal-achieve-btn"
-                    onClick={() => handleMarkAchieved(goal)}
-                  >
-                    {t("goals.markAchieved")}
-                  </button>
-                )}
-              </li>
-            );
-          })}
+                  <ProgressBar
+                    value={percent}
+                    color={isAchieved ? "#fada66" : "#ffe792"}
+                  />
+
+                  <div className="goal-progress-label">
+                    {t("goals.progress", {
+                      current: balance.toLocaleString(),
+                      target: goal.target_amount.toLocaleString(),
+                    })}
+                    {isAchieved && (
+                      <span className="goal-achieved-badge">
+                        {t("goals.achieved")}
+                      </span>
+                    )}
+                  </div>
+
+                  {!isAchieved && percent >= 100 && (
+                    <button
+                      type="button"
+                      className="goal-achieve-btn"
+                      onClick={() => handleMarkAchieved(goal)}
+                    >
+                      {t("goals.markAchieved")}
+                    </button>
+                  )}
+                </li>
+              );
+            })}
         </ul>
       </div>
     </div>
