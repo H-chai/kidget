@@ -304,10 +304,7 @@ export const GoalsPage = () => {
                     </button>
                   </div>
 
-                  <ProgressBar
-                    value={percent}
-                    color={isAchieved ? "#fada66" : "#ffe792"}
-                  />
+                  <ProgressBar value={percent} color={"#fada66"} />
 
                   <div className="goal-progress-label">
                     {t("goals.progress", {
