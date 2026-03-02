@@ -203,6 +203,7 @@
 .goal-mini-symbol {
   font-size: clamp(18px, 3.5vw, 20px);
   margin-right: 2px;
+  margin-left: 2px;
 }
 
 .goal-mini-more {
