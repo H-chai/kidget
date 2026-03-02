@@ -1,0 +1,207 @@
+{
+  "nav": {
+    "overview": "Hjem",
+    "history": "Historikk",
+    "badges": "Merker",
+    "goals": "Mål"
+  },
+  "overview": {
+    "greeting": "Hei, {{name}}!",
+    "balance": "Saldo",
+    "recentTransactions": "Siste transaksjoner",
+    "noTransactions": "Ingen transaksjoner ennå",
+    "levelProgress": "Nivåframgang",
+    "choresToLevelUp": "{{count}} gjøremål til neste nivå",
+    "maxLevel": "Høyeste nivå nådd!",
+    "activeGoal": "Sparer til:",
+    "moreToGo": "{{amount}} igjen!",
+    "moreToGoLabel": "igjen!",
+    "seeAllGoals": "Se alle mål →",
+    "seeAllHistory": "Se all historikk →",
+    "noGoals": "Ingen mål ennå — legg til ett!",
+    "goalReached": "Mål nådd! 🎉"
+  },
+  "history": {
+    "title": "Historikk",
+    "balance": "Saldo",
+    "noTransactions": "Ingen transaksjoner ennå",
+    "income": "Tjent",
+    "expense": "Brukt",
+    "deleteConfirm": "Slett?"
+  },
+  "addTransaction": {
+    "title": "Legg til transaksjon",
+    "income": "Gjøremål",
+    "expense": "Utgift",
+    "description": "Beskrivelse",
+    "descriptionPlaceholderIncome": "Hva gjorde du?",
+    "descriptionPlaceholderExpense": "Hva brukte du penger på?",
+    "amount": "Beløp",
+    "date": "Dato",
+    "submit": "Lagre",
+    "cancel": "Avbryt",
+    "invalidAmount": "Skriv inn et gyldig beløp",
+    "icon": "Ikon"
+  },
+  "badges": {
+    "title": "Merker & Nivå",
+    "level": "Nivå {{level}}",
+    "choresToNextLevel": "{{count}} gjøremål til neste nivå",
+    "maxLevel": "Du nådde høyeste nivå!",
+    "earnedSection": "Opptjent",
+    "unearnedSection": "Fortsett!"
+  },
+  "goals": {
+    "title": "Mål",
+    "noGoals": "Ingen mål ennå — legg til ett!",
+    "addGoal": "Legg til mål",
+    "editGoal": "Rediger mål",
+    "targetAmount": "Målbeløp",
+    "goalName": "Målnavn",
+    "goalNamePlaceholder": "Hva sparer du til?",
+    "progress": "{{current}} / {{target}}",
+    "achieved": "Nådd!",
+    "markAchieved": "Marker som nådd",
+    "save": "Lagre",
+    "cancel": "Avbryt",
+    "delete": "Slett"
+  },
+  "onboarding": {
+    "title": "Velkommen til Kidget!",
+    "subtitle": "La oss sette opp profilen din",
+    "avatarLabel": "Velg farge",
+    "nameLabel": "Ditt navn",
+    "namePlaceholder": "f.eks. Emma",
+    "submit": "La oss gå!",
+    "saving": "Lagrer..."
+  },
+  "settings": {
+    "title": "Innstillinger",
+    "profileSection": "Profil",
+    "avatarLabel": "Maskotfarge",
+    "nameLabel": "Navn",
+    "namePlaceholder": "Ditt navn",
+    "save": "Lagre endringer",
+    "saving": "Lagrer...",
+    "saved": "Lagret!",
+    "signOut": "Logg ut",
+    "deleteAccount": "Slett konto",
+    "deleteAccountTitle": "Slett konto?",
+    "deleteAccountConfirm": "Er du sikker på at du vil slette kontoen din?",
+    "deleteAccountSubtitle": "Du mister permanent:",
+    "deleteAccountItem1": "profilen din",
+    "deleteAccountItem2": "gjøremål og utgifter",
+    "deleteAccountItem3": "mål",
+    "deleteAccountItem4": "merker"
+  },
+  "auth": {
+    "loginTitle": "Velkommen til Kidget",
+    "loginSubtitle": "Logg inn for å fortsette",
+    "signupTitle": "Opprett konto",
+    "signupSubtitle": "Sett opp Kidget for barnet ditt",
+    "checkEmailTitle": "Sjekk e-posten din",
+    "checkEmailBody": "Vi sendte en bekreftelseslenke til {{email}}. Klikk på den for å aktivere kontoen din.",
+    "email": "E-post",
+    "password": "Passord",
+    "passwordHint": "Minst 6 tegn",
+    "login": "Logg inn",
+    "signup": "Registrer deg",
+    "loggingIn": "Logger inn...",
+    "signingUp": "Registrerer...",
+    "noAccount": "Har du ikke en konto?",
+    "haveAccount": "Har du allerede en konto?",
+    "signupLink": "Registrer deg",
+    "loginLink": "Logg inn",
+    "forgotPassword": "Glemt passord?",
+    "forgotPasswordTitle": "Glemt passord?",
+    "forgotPasswordSubtitle": "Skriv inn e-posten din, så sender vi en tilbakestillingslenke",
+    "sendResetLink": "Send tilbakestillingslenke",
+    "sendingResetLink": "Sender...",
+    "resetLinkSentTitle": "Sjekk e-posten din",
+    "resetLinkSentBody": "Vi sendte en lenke for tilbakestilling av passord til {{email}}.",
+    "backToLogin": "Tilbake til innlogging",
+    "resetPasswordTitle": "Sett nytt passord",
+    "resetPasswordSubtitle": "Skriv inn ditt nye passord nedenfor",
+    "newPassword": "Nytt passord",
+    "setPassword": "Sett passord",
+    "settingPassword": "Lagrer...",
+    "errorInvalidCredentials": "Feil e-post eller passord. Prøv igjen.",
+    "errorDefault": "Noe gikk galt. Prøv igjen."
+  },
+  "common": {
+    "save": "Lagre",
+    "cancel": "Avbryt",
+    "delete": "Slett",
+    "edit": "Rediger",
+    "loading": "Laster...",
+    "error": "Noe gikk galt",
+    "currency": "{{amount}} NOK",
+    "currencySymbol": "NOK"
+  },
+  "badge": {
+    "first_chore": {
+      "name": "Første gjøremål",
+      "description": "Fullførte ditt første gjøremål"
+    },
+    "chore_5": {
+      "name": "Nybegynner",
+      "description": "Fullførte 5 gjøremål"
+    },
+    "chore_15": {
+      "name": "Hardtarbeider",
+      "description": "Fullførte 15 gjøremål"
+    },
+    "chore_50": {
+      "name": "Gjøremålshelt",
+      "description": "Fullførte 50 gjøremål"
+    },
+    "chore_100": {
+      "name": "Legende",
+      "description": "Fullførte 100 gjøremål"
+    },
+    "chore_streak_7": {
+      "name": "På fyr!",
+      "description": "Gjøremål 7 dager på rad"
+    },
+    "two_week_streak": {
+      "name": "Varm streak",
+      "description": "Gjøremål 14 dager på rad"
+    },
+    "monthly_habit": {
+      "name": "Månedsvane",
+      "description": "Gjøremål 30 dager på rad"
+    },
+    "first_goal": {
+      "name": "Målsetter!",
+      "description": "Opprettet ditt første sparemål"
+    },
+    "goal_achieved": {
+      "name": "Målknuser!",
+      "description": "Nådde ditt første sparemål"
+    },
+    "second_goal_achieved": {
+      "name": "Dobbelt mål",
+      "description": "Nådde ditt andre sparemål"
+    },
+    "goal_getter": {
+      "name": "Målsamler",
+      "description": "Nådde 3 sparemål"
+    },
+    "patient_saver": {
+      "name": "Tålmodig sparer",
+      "description": "Nådde et mål som tok over 30 dager"
+    },
+    "first_expense": {
+      "name": "Første kjøp",
+      "description": "Registrerte din første utgift"
+    },
+    "saver_month": {
+      "name": "Supersparer",
+      "description": "Brukte ingenting på en hel måned"
+    },
+    "no_expense_2months": {
+      "name": "Jernsparer",
+      "description": "Brukte ingenting i 2 hele måneder"
+    }
+  }
+}

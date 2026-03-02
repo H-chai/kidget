@@ -6,6 +6,7 @@ import "./LangSelector.css";
 const LANGS = [
   { code: "en", label: "English" },
   { code: "ja", label: "日本語" },
+  { code: "no", label: "Norsk" },
 ];
 
 export const LangSelector = () => {

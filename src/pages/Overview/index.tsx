@@ -28,7 +28,8 @@ const GOAL_CARD_COLORS = [
 ];
 
 export const OverviewPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const symbolAfter = i18n.language === "no";
   const { user } = useAuth();
 
   const [isWide, setIsWide] = useState(
@@ -90,8 +91,9 @@ export const OverviewPage = () => {
       <Card className="balance-card">
         <p className="balance-label">{t("overview.balance")}</p>
         <p className="balance-amount">
-          <span className="balance-symbol">{t("common.currencySymbol")}</span>
+          {!symbolAfter && <span className="balance-symbol">{t("common.currencySymbol")}</span>}
           {balance}
+          {symbolAfter && <span className="balance-symbol">{t("common.currencySymbol")}</span>}
         </p>
         <Mascot
           color={profile?.avatar_emoji ?? "#3C87D5"}
@@ -131,10 +133,9 @@ export const OverviewPage = () => {
                       <div className="goal-mini-left">
                         <p className="goal-mini-title">{goal.title}</p>
                         <p className="goal-mini-amount">
-                          <span className="goal-mini-symbol">
-                            {t("common.currencySymbol")}
-                          </span>
+                          {!symbolAfter && <span className="goal-mini-symbol">{t("common.currencySymbol")}</span>}
                           {goal.target_amount}
+                          {symbolAfter && <span className="goal-mini-symbol">{t("common.currencySymbol")}</span>}
                         </p>
                       </div>
                       <div className="goal-mini-chart-wrap">
