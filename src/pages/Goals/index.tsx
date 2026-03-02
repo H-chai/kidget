@@ -273,10 +273,9 @@ export const GoalsPage = () => {
             .sort((a, b) => (a.achieved_at ? 1 : 0) - (b.achieved_at ? 1 : 0))
             .map((goal) => {
               const isAchieved = !!goal.achieved_at;
-              const percent = Math.min(
-                100,
-                Math.max(0, (balance / goal.target_amount) * 100),
-              );
+              const percent = isAchieved
+                ? 100
+                : Math.min(100, Math.max(0, (balance / goal.target_amount) * 100));
 
               return (
                 <li
