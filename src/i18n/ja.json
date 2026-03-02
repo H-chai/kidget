@@ -6,7 +6,7 @@
     "goals": "もくひょう"
   },
   "overview": {
-    "greeting": "{{name}}、こんにちは！",
+    "greeting": "{{name}}のきろく",
     "balance": "ざんだか",
     "recentTransactions": "さいきんのきろく",
     "noTransactions": "まだきろくがありません",
