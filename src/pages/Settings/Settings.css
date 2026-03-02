@@ -1,7 +1,7 @@
 /* ===== Page ===== */
 
 .settings-page {
-  padding: 16px;
+  padding: 32px 16px 96px;
   min-height: 100vh;
   background: var(--color-accent);
 }
